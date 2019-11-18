@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <title>Swagger - QR Payment Service Interface</title>
+    <meta name="generator" content="Hugo 0.29" />
+
+    
+    <link rel="canonical" href="/specification/swagger/">
+    
+
+    <meta property="og:url" content="/specification/swagger/">
+    <meta property="og:title" content="QR Payment Service Interface">
+    <meta property="og:image" content="/images/logo-square.png">
+    <meta name="apple-mobile-web-app-title" content="QR Payment Service Interface">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot?52m981');
+        src: url('/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff?52m981')
+               format('woff'),
+             url('/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/highlight/highlight.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/palettes.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu%2bMono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-cyan palette-accent-orange">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        QR Payment Service Interface
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/electrumpayments" title="@electrumpayments on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/electrumpayments/qr-payment-service-interface" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="/images/logo-square.png">
+        </div>
+      
+      <div class="name">
+        
+          <br>
+          electrumpayments/qr-payment-service-interface
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Getting Started" href="/getting-started/">
+	
+	Getting Started
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Terminology" href="/terminology/">
+	
+	Terminology
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Protocol Basics" href="/protocol-basics/">
+	
+	Protocol Basics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner And Retailer Implementations" href="/partner-vs-retailer-implementations/">
+	
+	Partner And Retailer Implementations
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Retailer Message Flows" href="/retailer-message-flows/">
+	
+	Retailer Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner Message Flows" href="/partner-message-flows/">
+	
+	Partner Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Advanced Topics" href="/advanced-topics/">
+	
+	Advanced Topics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+  <span class="section">Specification</span>
+    <ul>
+      
+        
+        
+
+
+
+<a  title="Introduction" href="/specification/introduction/">
+	
+	Introduction
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Operations" href="/specification/operations/">
+	
+	Operations
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Definitions" href="/specification/definitions/">
+	
+	Definitions
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a class="current" title="Swagger" href="/specification/swagger/">
+	
+	Swagger
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+      
+        
+        
+
+
+
+<a  title="Release Notes" href="/specification/release-notes/">
+	
+	Release Notes
+</a>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Swagger </h1>
+
+			
+
+<p>The <a href="http://swagger.io">swagger (Open API)</a> definition of the interface specification can be found <a href="/specification/swagger/swagger.yaml">here</a>, as well as below.</p>
+
+<p>Many tools are available for processing swagger files, and using a code generation tool to create a boilerplate client or server can be an excellent starting point for development. We highly recommend looking at <a href="https://github.com/swagger-api/swagger-codegen">swagger-codegen</a> for a generator in your preferred language when starting out.</p>
+
+<h3 id="swagger-definition">Swagger definition</h3>
+
+<pre><code class="language-yaml">---
+swagger: &quot;2.0&quot;
+info:
+  description: &quot;The Electrum QR Payment Service describes an interface for supporting\
+    \ payments via scanning of a QR code transactions.&quot;
+  version: &quot;1.1.0&quot;
+  title: &quot;QR PaymentService Interface&quot;
+  contact:
+    name: &quot;Electrum Support&quot;
+    url: &quot;http://io.electrum&quot;
+    email: &quot;support@electrum.co.za&quot;
+  license:
+    name: &quot;Apache 2.0&quot;
+    url: &quot;http://www.apache.org/licenses/LICENSE-2.0.html&quot;
+host: &quot;sandbox.electrum.io&quot;
+basePath: &quot;/qr/v1&quot;
+schemes:
+- &quot;https&quot;
+paths:
+  /payments:
+    post:
+      summary: &quot;Requests a payment to be processed via a QR Partner.&quot;
+      description: &quot;This request contains conventional payment information (POS information,\
+        \ transaction amount, date etc.) as well as Partner information. If a merchant\
+        \ is unable to supply the Partner information in this request, then the request\
+        \ is directed to an intermediate system which also receives notifications\
+        \ from Partners of QR scans. This intermediate system will match the payment\
+        \ request from the merchant with the scan notification from the Partner using\
+        \ the QR code information common to both messages. The payment request may\
+        \ then be forwarded to the correct Partner for processing.&quot;
+      operationId: &quot;pay&quot;
+      consumes:
+      - &quot;application/json&quot;
+      produces:
+      - &quot;application/json&quot;
+      parameters:
+      - in: &quot;body&quot;
+        name: &quot;body&quot;
+        description: &quot;A QR payment request.&quot;
+        required: true
+        schema:
+          $ref: &quot;#/definitions/PaymentRequest&quot;
+      responses:
+        201:
+          description: &quot;Created&quot;
+          schema:
+            $ref: &quot;#/definitions/PaymentResponse&quot;
+        400:
+          description: &quot;Bad Request&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        500:
+          description: &quot;Internal Server Error&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        503:
+          description: &quot;Service Unavailable&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        504:
+          description: &quot;Gateway Timeout&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+      security:
+      - httpBasic: []
+  /payments/confirmations:
+    post:
+      summary: &quot;Confirms completion of tender initiated by a payment request.&quot;
+      description: &quot;This operation confirms that a QR payment transaction has completed\
+        \ successfully between the consumer and the merchant. Such a transaction may\
+        \ may be settled between the merchant and the Partner that processed the payment.\
+        \ Such a transaction cannot be reversed.&quot;
+      operationId: &quot;confirmPayment&quot;
+      consumes:
+      - &quot;application/json&quot;
+      produces:
+      - &quot;application/json&quot;
+      parameters:
+      - in: &quot;body&quot;
+        name: &quot;body&quot;
+        description: &quot;A QR payment confirmation.&quot;
+        required: true
+        schema:
+          $ref: &quot;#/definitions/PaymentConfirmation&quot;
+      responses:
+        202:
+          description: &quot;Accepted&quot;
+          schema:
+            $ref: &quot;#/definitions/PaymentConfirmation&quot;
+        400:
+          description: &quot;Bad Request&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        404:
+          description: &quot;Not Found&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        500:
+          description: &quot;Internal Server Error&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        503:
+          description: &quot;Service Unavailable&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        504:
+          description: &quot;Gateway Timeout&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+      security:
+      - httpBasic: []
+  /payments/reversals:
+    post:
+      summary: &quot;Reverses a payment request that failed or timed out&quot;
+      description: &quot;This operation indicates that the sale did not complete and the\
+        \ payment should be reversed if it took place. Once a payment is reversed\
+        \ it canot be confirmed and need not be settled between the merchant and the\
+        \ QR Partner.&quot;
+      operationId: &quot;reversePayment&quot;
+      consumes:
+      - &quot;application/json&quot;
+      produces:
+      - &quot;application/json&quot;
+      parameters:
+      - in: &quot;body&quot;
+        name: &quot;body&quot;
+        description: &quot;A QR payment reversal.&quot;
+        required: true
+        schema:
+          $ref: &quot;#/definitions/PaymentReversal&quot;
+      responses:
+        202:
+          description: &quot;Accepted&quot;
+          schema:
+            $ref: &quot;#/definitions/PaymentReversal&quot;
+        400:
+          description: &quot;Bad Request&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        404:
+          description: &quot;Not Found&quot;
+        500:
+          description: &quot;Internal Server Error&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        503:
+          description: &quot;Service Unavailable&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        504:
+          description: &quot;Gateway Timeout&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+      security:
+      - httpBasic: []
+  /qrCodes:
+    post:
+      summary: &quot;Requests a QR Code to display to a customer to be scanned.&quot;
+      description: &quot;The customer may scan this code with a Partner's application and\
+        \ thereby allow the Partner to identify the QR code provider.&quot;
+      operationId: &quot;createQrCode&quot;
+      consumes:
+      - &quot;application/json&quot;
+      produces:
+      - &quot;application/json&quot;
+      parameters:
+      - in: &quot;body&quot;
+        name: &quot;body&quot;
+        description: &quot;Information pertaining to the QR code, which may be available\
+          \ at the time of the request. This may include details such as the entity\
+          \ requesting the QR code, the value of the transaction for which the QR\
+          \ code will be used and the specific purpose of the QR code. The request\
+          \ for a QR code should convey information about the merchant requesting\
+          \ the QR code (e.g. POS information) and not information about the consumer\
+          \ who will scan the QR code (e.g. customer or loyalty information).&quot;
+        required: true
+        schema:
+          $ref: &quot;#/definitions/CreateQrCodeRequest&quot;
+      responses:
+        201:
+          description: &quot;Created&quot;
+          schema:
+            $ref: &quot;#/definitions/CreateQrCodeResponse&quot;
+        400:
+          description: &quot;Bad Request&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        500:
+          description: &quot;Internal Server Error&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        503:
+          description: &quot;Service Unavailable&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        504:
+          description: &quot;Gateway Timeout&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+      security:
+      - httpBasic: []
+  /scans:
+    post:
+      summary: &quot;Notify that a QR code has been scanned.&quot;
+      description: &quot;Partners are not notified by a QR code provider when a QR code\
+        \ is generated. Only when a consumer scans a QR code using a Partner's application\
+        \ is the Partner aware that the QR code is available. The Partner subsequently\
+        \ informs the provider of the QR code that their code has been scanned. The\
+        \ QR code provider shall then associate any other transactions pertaining\
+        \ to the QR code with the Partner.&quot;
+      operationId: &quot;notifyScan&quot;
+      consumes:
+      - &quot;application/json&quot;
+      produces:
+      - &quot;application/json&quot;
+      parameters:
+      - in: &quot;body&quot;
+        name: &quot;body&quot;
+        description: &quot;A get QR code request.&quot;
+        required: true
+        schema:
+          $ref: &quot;#/definitions/ScanNotification&quot;
+      responses:
+        202:
+          description: &quot;Accepted&quot;
+        400:
+          description: &quot;Bad Request&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        500:
+          description: &quot;Internal Server Error&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        503:
+          description: &quot;Service Unavailable&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+        504:
+          description: &quot;Gateway Timeout&quot;
+          schema:
+            $ref: &quot;#/definitions/ErrorDetail&quot;
+      security:
+      - httpBasic: []
+securityDefinitions:
+  httpBasic:
+    description: &quot;All requests require HTTP basic authentication, where user name\
+      \ equals the value used in Client.id and password has been agreed with Electrum.&quot;
+    type: &quot;basic&quot;
+definitions:
+  Amounts:
+    type: &quot;object&quot;
+    properties:
+      requestAmount:
+        description: &quot;The transaction amount requested by the customer to be authorised\
+          \ or approved. This is the total amount the customer wishes to pay for a\
+          \ service or virtual product.&quot;
+        $ref: &quot;#/definitions/LedgerAmount&quot;
+      approvedAmount:
+        description: &quot;The transaction amount which was approved by the upstream entity.&quot;
+        $ref: &quot;#/definitions/LedgerAmount&quot;
+      feeAmount:
+        description: &quot;Fees charged by the upstream entity for processing the transaction.&quot;
+        $ref: &quot;#/definitions/LedgerAmount&quot;
+      balanceAmount:
+        description: &quot;The remaining balance on the customer's account.&quot;
+        $ref: &quot;#/definitions/LedgerAmount&quot;
+      additionalAmounts:
+        type: &quot;object&quot;
+        description: &quot;Any additional amounts that are involved in a transaction which\
+          \ don't appropriately fit into the other amount fields.&quot;
+        additionalProperties:
+          $ref: &quot;#/definitions/LedgerAmount&quot;
+    description: &quot;Amounts which make up the transaction. Absent amounts have zero\
+      \ value.&quot;
+  Barcode:
+    type: &quot;object&quot;
+    required:
+    - &quot;data&quot;
+    - &quot;encoding&quot;
+    properties:
+      data:
+        type: &quot;string&quot;
+        description: &quot;Data to be encoded in the barcode&quot;
+      encoding:
+        type: &quot;string&quot;
+        description: &quot;Specifies the encoding used in the barcode&quot;
+    description: &quot;Used to indicate barcode information for a slip line.&quot;
+  CreateQrCodeRequest:
+    type: &quot;object&quot;
+    required:
+    - &quot;client&quot;
+    - &quot;id&quot;
+    - &quot;originator&quot;
+    - &quot;time&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this request. This may\
+          \ be a variant 3 or 4 as defined in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      originator:
+        description: &quot;Data relating to the originator of the request.&quot;
+        $ref: &quot;#/definitions/Originator&quot;
+      client:
+        description: &quot;Data relating to the sender of the request.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;An array of identifiers which each identify the transaction\
+          \ within each entity's system.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      rrn:
+        type: &quot;string&quot;
+        description: &quot;This is a reference set by the original source of the request.&quot;
+      stan:
+        type: &quot;string&quot;
+        description: &quot;The System Trace Audit Number can be used to locate transactions\
+          \ across different systems.&quot;
+      amounts:
+        description: &quot;The amounts pertaining to the QR code to be created.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
+    description: &quot;A request from the merchant for a QR code to be generated. The QR\
+      \ code returned should be suitable to be displayed to a consumer to be scanned.&quot;
+  CreateQrCodeResponse:
+    type: &quot;object&quot;
+    required:
+    - &quot;client&quot;
+    - &quot;id&quot;
+    - &quot;originator&quot;
+    - &quot;qrCode&quot;
+    - &quot;time&quot;
+    - &quot;tranId&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this request. This may\
+          \ be a variant 3 or 4 as defined in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      originator:
+        description: &quot;Data relating to the originator of the request.&quot;
+        $ref: &quot;#/definitions/Originator&quot;
+      client:
+        description: &quot;Data relating to the sender of the request.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;An array of identifiers which each identify the transaction\
+          \ within each entity's system.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      rrn:
+        type: &quot;string&quot;
+        description: &quot;This is a reference set by the original source of the request.&quot;
+      stan:
+        type: &quot;string&quot;
+        description: &quot;The System Trace Audit Number can be used to locate transactions\
+          \ across different systems.&quot;
+      amounts:
+        description: &quot;The amounts pertaining to the QR code to be created.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;The unique transaction identifier assigned by the QR code provider\
+          \ to this QR code. This value is also encoded in the QR code returned in\
+          \ the qrCode field. The QR code provider is responsible for ensuring appropriate\
+          \ uniqueness of the QR code for the appropriate period of time. No specific\
+          \ restrictions are placed on the format of the QR code (length, characters\
+          \ etc.) but implementors should consider the following aspects; ***Length***\
+          \ - Longer QR codes require more detailed resolution on display screens\
+          \ and scanning devices and are also harder to scan. ***Manual Entry*** -\
+          \ While manual entry of QR codes is not explicitly supported by the QR Payments\
+          \ Service Interface, implementors may choose to support such fallback mechanisms\
+          \ if a QR code cannot be scanned. Longer and more complicated codes will\
+          \ be more susceptible to errors when inputted manually. This value must\
+          \ be provided in subsequent 'notifyScan' and 'pay' operations to link payments\
+          \ to specific Partners.&quot;
+      qrCode:
+        type: &quot;string&quot;
+        description: &quot;The full set of data to be encoded in the graphical QR code.\
+          \ The data is provided in a Tag-Length-Value format as described in the\
+          \ EMVCo specification but is not a fully EMVCo compliant string e.g. Tags\
+          \ which are mandatory under the EMVCo specification may be omitted. The\
+          \ precise set of Tags to be populated in the QR code should be discussed\
+          \ and agreed upon by implementation partners.&quot;
+    description: &quot;The response to a CreateQrCodeRequest which contains the specific\
+      \ code assigned by the QR code provider as well as the full QR code in EMVCo\
+      \ format.&quot;
+  ErrorDetail:
+    type: &quot;object&quot;
+    required:
+    - &quot;errorMessage&quot;
+    - &quot;errorType&quot;
+    - &quot;id&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this errorDetail, as\
+          \ defined for a variant 4 UUID in [RFC 4122](https://tools.ietf.org/html/rfc4122).&quot;
+        minLength: 0
+        maxLength: 20
+      originalId:
+        type: &quot;string&quot;
+        description: &quot;The UUID of the original request message in the case of an error\
+          \ occurring for an advice message.&quot;
+      errorType:
+        type: &quot;string&quot;
+        description: &quot;The type of error that occurred. This value should be used for\
+          \ programmatic handling of errors.&quot;
+        enum:
+        - &quot;DUPLICATE_RECORD&quot;
+        - &quot;FORMAT_ERROR&quot;
+        - &quot;FUNCTION_NOT_SUPPORTED&quot;
+        - &quot;GENERAL_ERROR&quot;
+        - &quot;INVALID_AMOUNT&quot;
+        - &quot;ROUTING_ERROR&quot;
+        - &quot;TRANSACTION_NOT_SUPPORTED&quot;
+        - &quot;UNABLE_TO_LOCATE_RECORD&quot;
+        - &quot;UPSTREAM_UNAVAILABLE&quot;
+        - &quot;ACCOUNT_ALREADY_SETTLED&quot;
+        - &quot;INVALID_MERCHANT&quot;
+        - &quot;DO_NOT_HONOR&quot;
+        - &quot;DECLINED_BY_PARTNER&quot;
+        - &quot;DECLINED_BY_ACQUIRER&quot;
+        - &quot;DECLINED_BY_ISSUER&quot;
+        - &quot;INSUFFICIENT_FUNDS&quot;
+        - &quot;INVALID_CARD_NUMBER&quot;
+        - &quot;CARD_EXPIRED&quot;
+        - &quot;INVALID_TRAN_ID&quot;
+        - &quot;PARTNER_UNKNOWN&quot;
+        - &quot;NO_SCAN_RECEIVED&quot;
+        - &quot;INVALID_ACCOUNT&quot;
+      errorMessage:
+        type: &quot;string&quot;
+        description: &quot;A short description of the error. This value should be suitable\
+          \ for display to an operator.&quot;
+        minLength: 0
+        maxLength: 40
+      detailMessage:
+        type: &quot;object&quot;
+        description: &quot;A free form detailed description of a particular failure condition\
+          \ may optionally be supplied. This information is intended for informational\
+          \ purposes only when investigating the cause of a failure.&quot;
+      providerErrorCode:
+        type: &quot;string&quot;
+        description: &quot;The error code returned by the service provider if available.\
+          \ Note that this should be used for informational purposes only. Messages\
+          \ displayed on the POS should make use of errorType and errorMessage to\
+          \ ensure a consistent set of responses.&quot;
+      providerErrorMsg:
+        type: &quot;string&quot;
+        description: &quot;The error message returned by the service provider if available.\
+          \ Note that this should be used for informational purposes only. Messages\
+          \ displayed on the POS should make use of errorType and errorMessage to\
+          \ ensure a consistent set of responses.&quot;
+      providerRef:
+        type: &quot;string&quot;
+        description: &quot;The reference returned by the service provider if available.&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;The unique transaction identifier related to this transaction\
+          \ if available. This is the value returned in the tranId field of the CreateQrCodeResponse\
+          \ or the ScanNotification.&quot;
+    description: &quot;Describes a failed outcome of an operation.&quot;
+  Institution:
+    type: &quot;object&quot;
+    required:
+    - &quot;id&quot;
+    - &quot;name&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The institution's ID. API implementations should take care to\
+          \ set this field as appropriate for the implementation.&quot;
+      name:
+        type: &quot;string&quot;
+        description: &quot;The institutions's name&quot;
+        minLength: 0
+        maxLength: 40
+    description: &quot;Originating, acquiring, processing, or receiving institution details&quot;
+  LedgerAmount:
+    type: &quot;object&quot;
+    required:
+    - &quot;amount&quot;
+    - &quot;currency&quot;
+    properties:
+      amount:
+        type: &quot;integer&quot;
+        format: &quot;int64&quot;
+        description: &quot;Amount in minor denomination, e.g. R799.95 is encoded as 79995&quot;
+      currency:
+        type: &quot;string&quot;
+        description: &quot;Three digit currency number from ISO 4217, e.g. South African\
+          \ Rand is encoded as 710&quot;
+        pattern: &quot;[0-9]{3}&quot;
+      ledgerIndicator:
+        type: &quot;string&quot;
+        description: &quot;Indicates whether this amount is a debit or a credit. Only required\
+          \ when the amount can be either a debit or a credit&quot;
+        enum:
+        - &quot;DEBIT&quot;
+        - &quot;CREDIT&quot;
+    description: &quot;An amount object only containing value and currency, and optionally\
+      \ an indicator of DEBIT/CREDIT&quot;
+  Merchant:
+    type: &quot;object&quot;
+    required:
+    - &quot;merchantId&quot;
+    - &quot;merchantName&quot;
+    - &quot;merchantType&quot;
+    properties:
+      merchantType:
+        type: &quot;string&quot;
+        description: &quot;The assigned four digit merchant category code&quot;
+        pattern: &quot;[0-9]{4}&quot;
+      merchantId:
+        type: &quot;string&quot;
+        description: &quot;The assigned merchant identifier. Also known as card acceptor\
+          \ id&quot;
+        minLength: 15
+        maxLength: 15
+      merchantName:
+        description: &quot;The name of a merchant&quot;
+        $ref: &quot;#/definitions/MerchantName&quot;
+    description: &quot;Merchant related data. Must be included if available&quot;
+  MerchantName:
+    type: &quot;object&quot;
+    required:
+    - &quot;city&quot;
+    - &quot;country&quot;
+    - &quot;name&quot;
+    - &quot;region&quot;
+    properties:
+      name:
+        type: &quot;string&quot;
+        description: &quot;The merchant or trading as name associated with the merchant&quot;
+        minLength: 0
+        maxLength: 23
+      city:
+        type: &quot;string&quot;
+        description: &quot;The city where the merchant is located&quot;
+        minLength: 0
+        maxLength: 13
+      region:
+        type: &quot;string&quot;
+        description: &quot;The state or region where the merchant is located&quot;
+        minLength: 0
+        maxLength: 2
+      country:
+        type: &quot;string&quot;
+        description: &quot;The country where the merchant is located&quot;
+        minLength: 0
+        maxLength: 2
+    description: &quot;A container object representing the Merchant Name and Location&quot;
+  Originator:
+    type: &quot;object&quot;
+    required:
+    - &quot;institution&quot;
+    - &quot;merchant&quot;
+    - &quot;terminalId&quot;
+    properties:
+      institution:
+        description: &quot;The institution originating the request, as issued by Electrum&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      terminalId:
+        type: &quot;string&quot;
+        description: &quot;The ID that uniquely identifies each device or system in an\
+          \ originator's institution capable of sending requests. Required for transactions\
+          \ initiated from physical card entry or point-of-sale devices&quot;
+        minLength: 8
+        maxLength: 8
+      merchant:
+        description: &quot;Merchant data. Required if available&quot;
+        $ref: &quot;#/definitions/Merchant&quot;
+    description: &quot;The Originator object encapsulates data relating to the originator\
+      \ of the transaction&quot;
+  PaymentConfirmation:
+    type: &quot;object&quot;
+    required:
+    - &quot;id&quot;
+    - &quot;requestId&quot;
+    - &quot;thirdPartyIdentifiers&quot;
+    - &quot;time&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this advice, as defined\
+          \ for a variant 4 UUID in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      requestId:
+        type: &quot;string&quot;
+        description: &quot;The UUID identifying the request that this advice relates to&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;The unaltered thirdPartyIdentifiers array as supplied in the\
+          \ related BasicResponse message. Required if thirdPartyIdentifiers field\
+          \ was present in the BasicResponse. If no thirdPartyIdentifiers was received\
+          \ in the BasicResponse or no BasicResponse was received then this should\
+          \ be set to the thirdPartyIdentifiers sent in the original request.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      stan:
+        type: &quot;string&quot;
+        description: &quot;The System Trace Audit Number can be used to locate transactions\
+          \ across different systems.&quot;
+      rrn:
+        type: &quot;string&quot;
+        description: &quot;This is a reference set by the original source of the transaction.&quot;
+      partner:
+        description: &quot;An echo of the value in the original PaymentRequest.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;An echo of the value in the original PaymentRequest.&quot;
+    description: &quot;Confirm that a previous {@link PaymentRequest} has completed successfully\
+      \ at the POS. Where possible all optional fields should be supplied to ensure\
+      \ smooth processing. If optional fields are not present then processing may\
+      \ require retrieval of the original transaction leading to unnecessary processing\
+      \ overheads.&quot;
+  PaymentRequest:
+    type: &quot;object&quot;
+    required:
+    - &quot;amounts&quot;
+    - &quot;client&quot;
+    - &quot;id&quot;
+    - &quot;originator&quot;
+    - &quot;thirdPartyIdentifiers&quot;
+    - &quot;time&quot;
+    - &quot;tranId&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this transaction, as\
+          \ defined for a variant 4 UUID in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      originator:
+        description: &quot;Data relating to the originator of the transaction.&quot;
+        $ref: &quot;#/definitions/Originator&quot;
+      client:
+        description: &quot;Data relating to the sender of Transaction.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      settlementEntity:
+        description: &quot;Data relating to the entity with whom the Merchant will settle\
+          \ the transaction.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      receiver:
+        description: &quot;Data relating to the entity which ultimately processes the request.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;An array of identifiers which each identify the transaction\
+          \ within each entity's system.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      slipData:
+        description: &quot;Text to be printed on the customer receipt.&quot;
+        $ref: &quot;#/definitions/SlipData&quot;
+      basketRef:
+        type: &quot;string&quot;
+        description: &quot;Used to group multiple transactions which would otherwise be\
+          \ considered independent.&quot;
+      tranType:
+        type: &quot;string&quot;
+        description: &quot;Data relating to the type of transaction taking place (i.e.\
+          \ cash withdrawal, goods and services etc.).&quot;
+        enum:
+        - &quot;GOODS_AND_SERVICES&quot;
+        - &quot;CASH_WITHDRAWAL&quot;
+        - &quot;DEBIT_ADJUSTMENT&quot;
+        - &quot;GOODS_AND_SERVICES_WITH_CASH_BACK&quot;
+        - &quot;NON_CASH&quot;
+        - &quot;RETURNS&quot;
+        - &quot;DEPOSIT&quot;
+        - &quot;CREDIT_ADJUSTMENT&quot;
+        - &quot;GENERAL_CREDIT&quot;
+        - &quot;AVAILABLE_FUNDS_INQUIRY&quot;
+        - &quot;BALANCE_INQUIRY&quot;
+        - &quot;GENERAL_INQUIRY&quot;
+        - &quot;CARD_VERIFICATION_INQUIRY&quot;
+        - &quot;CARDHOLDER_ACCOUNTS_TRANSFER&quot;
+        - &quot;GENERAL_TRANSFER&quot;
+        - &quot;PAYMENT_FROM_ACCOUNT&quot;
+        - &quot;GENERAL_PAYMENT&quot;
+        - &quot;PAYMENT_TO_ACCOUNT&quot;
+        - &quot;PAYMENT_FROM_ACCOUNT_TO_ACCOUNT&quot;
+        - &quot;PLACE_HOLD_ON_CARD&quot;
+        - &quot;GENERAL_ADMIN&quot;
+        - &quot;CHANGE_PIN&quot;
+        - &quot;CARD_HOLDER_INQUIRY&quot;
+        - &quot;POINTS_INQUIRY&quot;
+      srcAccType:
+        type: &quot;string&quot;
+        description: &quot;This specifies the type of source account being used in the\
+          \ transaction (i.e. cheque, savings).&quot;
+        enum:
+        - &quot;DEFAULT&quot;
+        - &quot;SAVINGS&quot;
+        - &quot;CHEQUE&quot;
+        - &quot;CREDIT&quot;
+        - &quot;UNIVERSAL&quot;
+        - &quot;ELECTRONIC_PURSE&quot;
+        - &quot;GIFT_CARD&quot;
+        - &quot;STORED_VALUE&quot;
+      destAccType:
+        type: &quot;string&quot;
+        description: &quot;This specifies the type of destination account being used in\
+          \ the transaction (i.e. cheque, savings).&quot;
+        enum:
+        - &quot;DEFAULT&quot;
+        - &quot;SAVINGS&quot;
+        - &quot;CHEQUE&quot;
+        - &quot;CREDIT&quot;
+        - &quot;UNIVERSAL&quot;
+        - &quot;ELECTRONIC_PURSE&quot;
+        - &quot;GIFT_CARD&quot;
+        - &quot;STORED_VALUE&quot;
+      stan:
+        type: &quot;string&quot;
+        description: &quot;The System Trace Audit Number can be used to locate transactions\
+          \ across different systems.&quot;
+      rrn:
+        type: &quot;string&quot;
+        description: &quot;This is a reference set by the original source of the transaction.&quot;
+      partner:
+        description: &quot;Data relating to the entity who will process the payment. This\
+          \ identifies the entity who provided the ScanNotification for the QR code\
+          \ associated with this PaymentRequest. This should be populated if known\
+          \ to aid in routing the PaymentRequest to the entity which provided the\
+          \ ScanNotification.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      amounts:
+        description: &quot;The amounts pertaining to the transaction. Note that the requestAmount\
+          \ herein maybe be different to that submitted when the QR code was requested.\
+          \ This request amount describes the actual amount to be processed in the\
+          \ transaction.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;The unique transaction identifier related to this transaction.\
+          \ Retailers must set this to the same value as that returned in the tranId\
+          \ field of the CreateQrCodeResponse that preceded this PaymentRequest. Partners\
+          \ may associate this PaymentRequest with the QR code whose ScanNotification\
+          \ they submitted with this value.&quot;
+      partnerPaymentToken:
+        type: &quot;string&quot;
+        description: &quot;A payment token received from the Partner in the ScanNotification.\
+          \ A Partner may provide such a value in the ScanNotification so that it\
+          \ is included in the PaymentRequest to the Partner. This field should be\
+          \ populated if known. A Partner may expect to receive this value in the\
+          \ PaymentRequest if it was provided in the ScanNotification.&quot;
+    description: &quot;A request to effect a payment with a linked QR code. Such requests\
+      \ originate from the Merchant's system and are typically directed to the Partner\
+      \ for processing. If the Partner for a PaymentRequest is not known, then the\
+      \ PaymentRequest may be directed to an intermediate system which receives ScanNotification\
+      \ messages from Partners. This intermediate system is then responsible for identifying\
+      \ the correct Partner to which a PaymentRequest should be directed.&quot;
+  PaymentResponse:
+    type: &quot;object&quot;
+    required:
+    - &quot;amounts&quot;
+    - &quot;client&quot;
+    - &quot;id&quot;
+    - &quot;originator&quot;
+    - &quot;partner&quot;
+    - &quot;thirdPartyIdentifiers&quot;
+    - &quot;time&quot;
+    - &quot;tranId&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this transaction, as\
+          \ defined for a variant 4 UUID in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      originator:
+        description: &quot;Data relating to the originator of the transaction.&quot;
+        $ref: &quot;#/definitions/Originator&quot;
+      client:
+        description: &quot;Data relating to the sender of Transaction.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      settlementEntity:
+        description: &quot;Data relating to the entity with whom the Merchant will settle\
+          \ the transaction.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      receiver:
+        description: &quot;Data relating to the entity which ultimately processes the request.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;An array of identifiers which each identify the transaction\
+          \ within each entity's system.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      slipData:
+        description: &quot;Text to be printed on the customer receipt.&quot;
+        $ref: &quot;#/definitions/SlipData&quot;
+      basketRef:
+        type: &quot;string&quot;
+        description: &quot;Used to group multiple transactions which would otherwise be\
+          \ considered independent.&quot;
+      tranType:
+        type: &quot;string&quot;
+        description: &quot;Data relating to the type of transaction taking place (i.e.\
+          \ cash withdrawal, goods and services etc.).&quot;
+        enum:
+        - &quot;GOODS_AND_SERVICES&quot;
+        - &quot;CASH_WITHDRAWAL&quot;
+        - &quot;DEBIT_ADJUSTMENT&quot;
+        - &quot;GOODS_AND_SERVICES_WITH_CASH_BACK&quot;
+        - &quot;NON_CASH&quot;
+        - &quot;RETURNS&quot;
+        - &quot;DEPOSIT&quot;
+        - &quot;CREDIT_ADJUSTMENT&quot;
+        - &quot;GENERAL_CREDIT&quot;
+        - &quot;AVAILABLE_FUNDS_INQUIRY&quot;
+        - &quot;BALANCE_INQUIRY&quot;
+        - &quot;GENERAL_INQUIRY&quot;
+        - &quot;CARD_VERIFICATION_INQUIRY&quot;
+        - &quot;CARDHOLDER_ACCOUNTS_TRANSFER&quot;
+        - &quot;GENERAL_TRANSFER&quot;
+        - &quot;PAYMENT_FROM_ACCOUNT&quot;
+        - &quot;GENERAL_PAYMENT&quot;
+        - &quot;PAYMENT_TO_ACCOUNT&quot;
+        - &quot;PAYMENT_FROM_ACCOUNT_TO_ACCOUNT&quot;
+        - &quot;PLACE_HOLD_ON_CARD&quot;
+        - &quot;GENERAL_ADMIN&quot;
+        - &quot;CHANGE_PIN&quot;
+        - &quot;CARD_HOLDER_INQUIRY&quot;
+        - &quot;POINTS_INQUIRY&quot;
+      srcAccType:
+        type: &quot;string&quot;
+        description: &quot;This specifies the type of source account being used in the\
+          \ transaction (i.e. cheque, savings).&quot;
+        enum:
+        - &quot;DEFAULT&quot;
+        - &quot;SAVINGS&quot;
+        - &quot;CHEQUE&quot;
+        - &quot;CREDIT&quot;
+        - &quot;UNIVERSAL&quot;
+        - &quot;ELECTRONIC_PURSE&quot;
+        - &quot;GIFT_CARD&quot;
+        - &quot;STORED_VALUE&quot;
+      destAccType:
+        type: &quot;string&quot;
+        description: &quot;This specifies the type of destination account being used in\
+          \ the transaction (i.e. cheque, savings).&quot;
+        enum:
+        - &quot;DEFAULT&quot;
+        - &quot;SAVINGS&quot;
+        - &quot;CHEQUE&quot;
+        - &quot;CREDIT&quot;
+        - &quot;UNIVERSAL&quot;
+        - &quot;ELECTRONIC_PURSE&quot;
+        - &quot;GIFT_CARD&quot;
+        - &quot;STORED_VALUE&quot;
+      stan:
+        type: &quot;string&quot;
+        description: &quot;The System Trace Audit Number can be used to locate transactions\
+          \ across different systems.&quot;
+      rrn:
+        type: &quot;string&quot;
+        description: &quot;This is a reference set by the original source of the transaction.&quot;
+      partner:
+        description: &quot;Data relating to the entity who processed the PaymentRequest.\
+          \ This identifies the entity who provided the ScanNotification for the QR\
+          \ code associated with this payment.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      tenders:
+        type: &quot;array&quot;
+        description: &quot;An array of tenders used to pay for the transaction. This may\
+          \ be used to describe the payment which was effected as a result of the\
+          \ QR code scan e.g. the card detail ultimately used for the payment.&quot;
+        items:
+          $ref: &quot;#/definitions/Tender&quot;
+      amounts:
+        description: &quot;The amounts pertaining to the transaction.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;This value is echoed from the PaymentRequest.&quot;
+      partnerPaymentToken:
+        type: &quot;string&quot;
+        description: &quot;This value is echoed from the PaymentRequest.&quot;
+    description: &quot;The response to a successful payment with a linked QR code scan.&quot;
+  PaymentReversal:
+    type: &quot;object&quot;
+    required:
+    - &quot;id&quot;
+    - &quot;requestId&quot;
+    - &quot;reversalReason&quot;
+    - &quot;thirdPartyIdentifiers&quot;
+    - &quot;time&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this advice, as defined\
+          \ for a variant 4 UUID in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      requestId:
+        type: &quot;string&quot;
+        description: &quot;The UUID identifying the request that this advice relates to&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;The unaltered thirdPartyIdentifiers array as supplied in the\
+          \ related BasicResponse message. Required if thirdPartyIdentifiers field\
+          \ was present in the BasicResponse. If no thirdPartyIdentifiers was received\
+          \ in the BasicResponse or no BasicResponse was received then this should\
+          \ be set to the thirdPartyIdentifiers sent in the original request.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      stan:
+        type: &quot;string&quot;
+        description: &quot;The System Trace Audit Number can be used to locate transactions\
+          \ across different systems.&quot;
+      rrn:
+        type: &quot;string&quot;
+        description: &quot;This is a reference set by the original source of the transaction.&quot;
+      reversalReason:
+        type: &quot;string&quot;
+        description: &quot;The reason for the reversal&quot;
+        enum:
+        - &quot;TIMEOUT&quot;
+        - &quot;CANCELLED&quot;
+        - &quot;RESPONSE_NOT_FINAL&quot;
+      partner:
+        description: &quot;An echo of the value in the original PaymentRequest.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;An echo of the value in the original PaymentRequest.&quot;
+    description: &quot;Reverse a previous PaymentRequest. This may be due to a cancellation\
+      \ at the POS or because the original PaymentRequest failed or is in an unknown\
+      \ state. Where possible all optional fields should be supplied to ensure smooth\
+      \ processing. If optional fields are not present then processing may require\
+      \ retrieval of the original transaction leading to unnecessary processing overheads.&quot;
+  ScanNotification:
+    type: &quot;object&quot;
+    required:
+    - &quot;id&quot;
+    - &quot;partner&quot;
+    - &quot;time&quot;
+    - &quot;tranId&quot;
+    properties:
+      id:
+        type: &quot;string&quot;
+        description: &quot;The randomly generated UUID identifying this notification. This\
+          \ may be a variant 3 or 4 as defined in [RFC 4122](https://tools.ietf.org/html/rfc4122)&quot;
+      time:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The date and time of the message as recorded by the sender.\
+          \ The format shall be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+      partner:
+        description: &quot;Data relating to the entity whose customer scanned a QR code.\
+          \ PaymentRequest messages which have a matching tranId value should be be\
+          \ sent to the Partner for processing.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      settlementEntity:
+        description: &quot;Data relating to the entity with whom the Merchant will settle\
+          \ the transaction. A Partner may provide this information if known at the\
+          \ time the QR code was scanned.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      receiver:
+        description: &quot;Data relating to the entity which ultimately processes the request.\
+          \ A Partner may provide this information if known at the time the QR code\
+          \ was scanned.&quot;
+        $ref: &quot;#/definitions/Institution&quot;
+      thirdPartyIdentifiers:
+        type: &quot;array&quot;
+        description: &quot;An array of identifiers which identify the transaction within\
+          \ each entity's system.&quot;
+        items:
+          $ref: &quot;#/definitions/ThirdPartyIdentifier&quot;
+      amounts:
+        description: &quot;The amounts pertaining to the QR code which was scanned.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
+      tranId:
+        type: &quot;string&quot;
+        description: &quot;The transaction identifier encoded within the QR Code which\
+          \ was scanned. Any PaymentRequest with a matching tranId value should be\
+          \ forwarded to the Partner for processing.&quot;
+      partnerPaymentToken:
+        type: &quot;string&quot;
+        description: &quot;A payment token received from the partner in the ScanNotification.\
+          \ If supplied by the Partner then it will be echoed in the PaymentRequest\
+          \ to the Partner.&quot;
+    description: &quot;A notification sent by the Partner indicating that the Partner received\
+      \ a scan of the QR code linked to the transaction ID. Any PaymentRequest with\
+      \ a matching tranId value should be forwarded to the Partner for processing.&quot;
+  SlipData:
+    type: &quot;object&quot;
+    properties:
+      messageLines:
+        type: &quot;array&quot;
+        description: &quot;An array of text lines and optional formatting to be printed\
+          \ on the customer slip.&quot;
+        items:
+          $ref: &quot;#/definitions/SlipLine&quot;
+      slipWidth:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+        description: &quot;The width of the slip in normal (unformatted) characters.&quot;
+      issuerReference:
+        type: &quot;string&quot;
+        description: &quot;An identifier that is printed on the customer slip and uniquely\
+          \ identifies the payment on the service provider's system. This value is\
+          \ used by the customer to request a refund when the service supports this\
+          \ function, and it is thus important that this number is unique.&quot;
+        pattern: &quot;[A-Z0-9]{1,40}&quot;
+    description: &quot;Data that may be printed on the customer slip for information purposes&quot;
+  SlipLine:
+    type: &quot;object&quot;
+    required:
+    - &quot;text&quot;
+    properties:
+      barcode:
+        description: &quot;Barcode information for this line&quot;
+        $ref: &quot;#/definitions/Barcode&quot;
+      text:
+        type: &quot;string&quot;
+        description: &quot;Text contained on the line&quot;
+      fontWidthScaleFactor:
+        type: &quot;number&quot;
+        format: &quot;double&quot;
+        description: &quot;Scale factor for font width. Assume 1.0 (i.e. normal size) if\
+          \ not present.&quot;
+      fontHeightScaleFactor:
+        type: &quot;number&quot;
+        format: &quot;double&quot;
+        description: &quot;Scale factor for font height. Assume 1.0 (i.e. normal size)\
+          \ if not present.&quot;
+      line:
+        type: &quot;boolean&quot;
+        description: &quot;Denotes a solid line on the slip. Assume false if not present.&quot;
+        default: false
+      cut:
+        type: &quot;boolean&quot;
+        description: &quot;Indicates the slip should be cut at this line. Assume false\
+          \ if not present.&quot;
+        default: false
+    description: &quot;A line of text to be printed on the till slip&quot;
+  Tender:
+    type: &quot;object&quot;
+    required:
+    - &quot;amount&quot;
+    - &quot;tenderType&quot;
+    properties:
+      accountType:
+        type: &quot;string&quot;
+        description: &quot;The type of account&quot;
+        enum:
+        - &quot;DEFAULT&quot;
+        - &quot;SAVINGS&quot;
+        - &quot;CHEQUE&quot;
+        - &quot;CREDIT&quot;
+        - &quot;UNIVERSAL&quot;
+        - &quot;ELECTRONIC_PURSE&quot;
+        - &quot;STORED_VALUE&quot;
+      amount:
+        description: &quot;The tendered amount&quot;
+        $ref: &quot;#/definitions/LedgerAmount&quot;
+      cardNumber:
+        type: &quot;string&quot;
+        description: &quot;A PCI compliant masked card number, with at least the first\
+          \ 6 digits in the clear. Only applicable to card based transactions&quot;
+        pattern: &quot;[0-9]{6}[0-9*]{0,13}&quot;
+      reference:
+        type: &quot;string&quot;
+        description: &quot;A free text reference&quot;
+        minLength: 0
+        maxLength: 40
+      tenderType:
+        type: &quot;string&quot;
+        description: &quot;The type of tender used&quot;
+        enum:
+        - &quot;CASH&quot;
+        - &quot;CHEQUE&quot;
+        - &quot;CREDIT_CARD&quot;
+        - &quot;DEBIT_CARD&quot;
+        - &quot;WALLET&quot;
+        - &quot;ROUNDING&quot;
+        - &quot;GIFT_CARD&quot;
+        - &quot;LOYALTY_CARD&quot;
+        - &quot;OTHER&quot;
+    description: &quot;Details of the Tender used by a customer towards a payment&quot;
+  ThirdPartyIdentifier:
+    type: &quot;object&quot;
+    required:
+    - &quot;institutionId&quot;
+    - &quot;transactionIdentifier&quot;
+    properties:
+      institutionId:
+        type: &quot;string&quot;
+        description: &quot;The entity's institution ID.&quot;
+      transactionIdentifier:
+        type: &quot;string&quot;
+        description: &quot;The identifier assigned to this transaction by the institution\
+          \ represented in institutionId. This value should be unique within the institution's\
+          \ system.&quot;
+    description: &quot;An identifier assigned by an entity which process the message. Identifiers\
+      \ are keyed by institution ID thereby enabling any institution to recall a transaction\
+      \ within the entity's own system using the entity's own identifier. Entity's\
+      \ must not alter the identifier set by another entity. Once an identifier has\
+      \ been set by an entity, all other entity's must send that identifier in subsequent\
+      \ messages.&quot;
+</code></pre>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the Apache 2.0 license
+				
+			</aside>
+
+			<footer class="footer">
+				<nav class="pagination" aria-label="Footer">
+  <div >
+    <img src="/images/logo-small-white.png" align="right"/>
+  </div>
+</nav>
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'electrumpayments\/qr-payment-service-interface';
+    
+    </script>
+
+    <script src="/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(headers.length > 0) {
+        for(var i = 0; i < headers.length; i++) {
+          var li = document.createElement("li");
+          li.setAttribute("class", "anchor");
+
+          var a  = document.createElement("a");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", headers[i].innerHTML);
+          a.innerHTML = headers[i].innerHTML;
+          
+          li.appendChild(a)
+          scrollspy.appendChild(li);
+        }
+      } else {
+        scrollspy.parentElement.removeChild(scrollspy)
+      }
+      
+
+      /* Add permanent link next to the headers */
+      var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+      for(var i = 0; i < headers.length; i++) {
+          var a = document.createElement("a");
+          a.setAttribute("class", "headerlink");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", "Permanent link")
+          a.innerHTML = "#";
+          headers[i].appendChild(a);
+      }
+    </script>
+
+    
+
+    <script src="//gohugo.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

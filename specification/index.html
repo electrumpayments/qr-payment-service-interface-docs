@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <title>Specifications - QR Payment Service Interface</title>
+    <meta name="generator" content="Hugo 0.29" />
+
+    
+    <link rel="canonical" href="/specification/">
+    
+
+    <meta property="og:url" content="/specification/">
+    <meta property="og:title" content="QR Payment Service Interface">
+    <meta property="og:image" content="/images/logo-square.png">
+    <meta name="apple-mobile-web-app-title" content="QR Payment Service Interface">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot?52m981');
+        src: url('/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff?52m981')
+               format('woff'),
+             url('/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/highlight/highlight.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/palettes.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu%2bMono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="/javascripts/modernizr.js"></script>
+
+    
+    <link href="/specification/index.xml" rel="alternate" type="application/rss+xml" title="QR Payment Service Interface" />
+    <link href="/specification/index.xml" rel="feed" type="application/rss+xml" title="QR Payment Service Interface" />
+    
+
+  </head>
+  <body class="palette-primary-cyan palette-accent-orange">
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        QR Payment Service Interface
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/electrumpayments" title="@electrumpayments on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/electrumpayments/qr-payment-service-interface" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="/images/logo-square.png">
+        </div>
+      
+      <div class="name">
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Getting Started" href="/getting-started/">
+	
+	Getting Started
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Terminology" href="/terminology/">
+	
+	Terminology
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Protocol Basics" href="/protocol-basics/">
+	
+	Protocol Basics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner And Retailer Implementations" href="/partner-vs-retailer-implementations/">
+	
+	Partner And Retailer Implementations
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Retailer Message Flows" href="/retailer-message-flows/">
+	
+	Retailer Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner Message Flows" href="/partner-message-flows/">
+	
+	Partner Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Advanced Topics" href="/advanced-topics/">
+	
+	Advanced Topics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+  <span class="section">Specification</span>
+    <ul>
+      
+        
+        
+
+
+
+<a  title="Introduction" href="/specification/introduction/">
+	
+	Introduction
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Operations" href="/specification/operations/">
+	
+	Operations
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Definitions" href="/specification/definitions/">
+	
+	Definitions
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Swagger" href="/specification/swagger/">
+	
+	Swagger
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Release Notes" href="/specification/release-notes/">
+	
+	Release Notes
+</a>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Pages in Specification</h1>
+
+			
+			<a href="/specification/definitions/" title="Definitions">
+				<h2>Definitions</h2>
+			</a>
+
+			<br>
+			Amounts Amounts which make up the transaction. Absent amounts have zero value.  Name Type Required Default Restrictions Description   requestAmount LedgerAmount optional   The transaction amount requested by the customer to be authorised or approved. This is the total amount the customer wishes to pay for a service or virtual product.   approvedAmount LedgerAmount optional   The transaction amount which was approved by the upstream entity.
+
+			<hr>
+			
+			<a href="/specification/introduction/" title="Introduction">
+				<h2>Introduction</h2>
+			</a>
+
+			<br>
+			Version 1.1.0
+The Electrum QR Payment Service describes an interface for supporting payments via scanning of a QR code transactions.
+Email Electrum Support
+Licensed under Apache 2.0
+Security Definitions httpBasic   type basic   description All requests require HTTP basic authentication, where user name equals the value used in Client.id and password has been agreed with Electrum.
+
+			<hr>
+			
+			<a href="/specification/operations/" title="Operations">
+				<h2>Operations</h2>
+			</a>
+
+			<br>
+			pay Requests a payment to be processed via a QR Partner.
+POST /payments
+This request contains conventional payment information (POS information, transaction amount, date etc.) as well as Partner information. If a merchant is unable to supply the Partner information in this request, then the request is directed to an intermediate system which also receives notifications from Partners of QR scans. This intermediate system will match the payment request from the merchant with the scan notification from the Partner using the QR code information common to both messages.
+
+			<hr>
+			
+			<a href="/specification/release-notes/" title="Release Notes">
+				<h2>Release Notes</h2>
+			</a>
+
+			<br>
+			This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.
+v1.1.0 Unreleased
+ All documentation was reviewed and updated for correctness. equals, toString and hashcode methods where altered to refer to super methods rather than directly re-using inherited fields. The maximum length of the errorMessage field in the ErrorDetail model was increased to 40 characters.  v1.0.0 Released 9 October 2019
+ Initial release
+
+			<hr>
+			
+			<a href="/specification/swagger/" title="Swagger">
+				<h2>Swagger</h2>
+			</a>
+
+			<br>
+			The swagger (Open API) definition of the interface specification can be found here, as well as below.
+Many tools are available for processing swagger files, and using a code generation tool to create a boilerplate client or server can be an excellent starting point for development. We highly recommend looking at swagger-codegen for a generator in your preferred language when starting out.
+Swagger definition &mdash; swagger: &quot;2.0&quot; info: description: &quot;The Electrum QR Payment Service describes an interface for supporting\ \ payments via scanning of a QR code transactions.
+
+			<hr>
+			
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the Apache 2.0 license
+				
+			</aside>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '';
+      var repo_id  = '';
+    
+    </script>
+
+    <script src="/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(headers.length > 0) {
+        for(var i = 0; i < headers.length; i++) {
+          var li = document.createElement("li");
+          li.setAttribute("class", "anchor");
+
+          var a  = document.createElement("a");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", headers[i].innerHTML);
+          a.innerHTML = headers[i].innerHTML;
+          
+          li.appendChild(a)
+          scrollspy.appendChild(li);
+        }
+      } else {
+        scrollspy.parentElement.removeChild(scrollspy)
+      }
+      
+
+      /* Add permanent link next to the headers */
+      var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+      for(var i = 0; i < headers.length; i++) {
+          var a = document.createElement("a");
+          a.setAttribute("class", "headerlink");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", "Permanent link")
+          a.innerHTML = "#";
+          headers[i].appendChild(a);
+      }
+    </script>
+
+    
+
+    <script src="//gohugo.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

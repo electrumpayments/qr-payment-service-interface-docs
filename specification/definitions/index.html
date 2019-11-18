@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <title>Definitions - QR Payment Service Interface</title>
+    <meta name="generator" content="Hugo 0.29" />
+
+    
+    <link rel="canonical" href="/specification/definitions/">
+    
+
+    <meta property="og:url" content="/specification/definitions/">
+    <meta property="og:title" content="QR Payment Service Interface">
+    <meta property="og:image" content="/images/logo-square.png">
+    <meta name="apple-mobile-web-app-title" content="QR Payment Service Interface">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot?52m981');
+        src: url('/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff?52m981')
+               format('woff'),
+             url('/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/highlight/highlight.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/palettes.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu%2bMono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-cyan palette-accent-orange">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        QR Payment Service Interface
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/electrumpayments" title="@electrumpayments on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/electrumpayments/qr-payment-service-interface" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="/images/logo-square.png">
+        </div>
+      
+      <div class="name">
+        
+          <br>
+          electrumpayments/qr-payment-service-interface
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Getting Started" href="/getting-started/">
+	
+	Getting Started
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Terminology" href="/terminology/">
+	
+	Terminology
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Protocol Basics" href="/protocol-basics/">
+	
+	Protocol Basics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner And Retailer Implementations" href="/partner-vs-retailer-implementations/">
+	
+	Partner And Retailer Implementations
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Retailer Message Flows" href="/retailer-message-flows/">
+	
+	Retailer Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner Message Flows" href="/partner-message-flows/">
+	
+	Partner Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Advanced Topics" href="/advanced-topics/">
+	
+	Advanced Topics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+  <span class="section">Specification</span>
+    <ul>
+      
+        
+        
+
+
+
+<a  title="Introduction" href="/specification/introduction/">
+	
+	Introduction
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Operations" href="/specification/operations/">
+	
+	Operations
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a class="current" title="Definitions" href="/specification/definitions/">
+	
+	Definitions
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+      
+        
+        
+
+
+
+<a  title="Swagger" href="/specification/swagger/">
+	
+	Swagger
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Release Notes" href="/specification/release-notes/">
+	
+	Release Notes
+</a>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Definitions </h1>
+
+			
+
+<h2 id="amounts">Amounts</h2>
+
+<p>Amounts which make up the transaction. Absent amounts have zero value.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>requestAmount</td>
+    <td><a href="#ledgeramount">LedgerAmount</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The transaction amount requested by the customer to be authorised or approved. This is the total amount the customer wishes to pay for a service or virtual product.</td>
+</tr>
+<tr>
+    <td>approvedAmount</td>
+    <td><a href="#ledgeramount">LedgerAmount</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The transaction amount which was approved by the upstream entity.</td>
+</tr>
+<tr>
+    <td>feeAmount</td>
+    <td><a href="#ledgeramount">LedgerAmount</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Fees charged by the upstream entity for processing the transaction.</td>
+</tr>
+<tr>
+    <td>balanceAmount</td>
+    <td><a href="#ledgeramount">LedgerAmount</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The remaining balance on the customer&rsquo;s account.</td>
+</tr>
+<tr>
+    <td>additionalAmounts</td>
+    <td>object</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Any additional amounts that are involved in a transaction which don&rsquo;t appropriately fit into the other amount fields.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="barcode">Barcode</h2>
+
+<p>Used to indicate barcode information for a slip line.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>data</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data to be encoded in the barcode</td>
+</tr>
+<tr>
+    <td>encoding</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Specifies the encoding used in the barcode</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="createqrcoderequest">CreateQrCodeRequest</h2>
+
+<p>A request from the merchant for a QR code to be generated. The QR code returned should be suitable to be displayed to a consumer to be scanned.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this request. This may be a variant 3 or 4 as defined in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>originator</td>
+    <td><a href="#originator">Originator</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the originator of the request.</td>
+</tr>
+<tr>
+    <td>client</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the sender of the request.</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An array of identifiers which each identify the transaction within each entity&rsquo;s system.</td>
+</tr>
+<tr>
+    <td>rrn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This is a reference set by the original source of the request.</td>
+</tr>
+<tr>
+    <td>stan</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The System Trace Audit Number can be used to locate transactions across different systems.</td>
+</tr>
+<tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The amounts pertaining to the QR code to be created.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="createqrcoderesponse">CreateQrCodeResponse</h2>
+
+<p>The response to a CreateQrCodeRequest which contains the specific code assigned by the QR code provider as well as the full QR code in EMVCo format.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this request. This may be a variant 3 or 4 as defined in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>originator</td>
+    <td><a href="#originator">Originator</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the originator of the request.</td>
+</tr>
+<tr>
+    <td>client</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the sender of the request.</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An array of identifiers which each identify the transaction within each entity&rsquo;s system.</td>
+</tr>
+<tr>
+    <td>rrn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This is a reference set by the original source of the request.</td>
+</tr>
+<tr>
+    <td>stan</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The System Trace Audit Number can be used to locate transactions across different systems.</td>
+</tr>
+<tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The amounts pertaining to the QR code to be created.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The unique transaction identifier assigned by the QR code provider to this QR code. This value is also encoded in the QR code returned in the qrCode field. The QR code provider is responsible for ensuring appropriate uniqueness of the QR code for the appropriate period of time. No specific restrictions are placed on the format of the QR code (length, characters etc.) but implementors should consider the following aspects; <strong><em>Length</em></strong> - Longer QR codes require more detailed resolution on display screens and scanning devices and are also harder to scan. <strong><em>Manual Entry</em></strong> - While manual entry of QR codes is not explicitly supported by the QR Payments Service Interface, implementors may choose to support such fallback mechanisms if a QR code cannot be scanned. Longer and more complicated codes will be more susceptible to errors when inputted manually. This value must be provided in subsequent &lsquo;notifyScan&rsquo; and &lsquo;pay&rsquo; operations to link payments to specific Partners.</td>
+</tr>
+<tr>
+    <td>qrCode</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The full set of data to be encoded in the graphical QR code. The data is provided in a Tag-Length-Value format as described in the EMVCo specification but is not a fully EMVCo compliant string e.g. Tags which are mandatory under the EMVCo specification may be omitted. The precise set of Tags to be populated in the QR code should be discussed and agreed upon by implementation partners.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="errordetail">ErrorDetail</h2>
+
+<p>Describes a failed outcome of an operation.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>20</i><br/></td>
+    <td>The randomly generated UUID identifying this errorDetail, as defined for a variant 4 UUID in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>.</td>
+</tr>
+<tr>
+    <td>originalId</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The UUID of the original request message in the case of an error occurring for an advice message.</td>
+</tr>
+<tr>
+    <td>errorType</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td><i>[DUPLICATE_RECORD, FORMAT_ERROR, FUNCTION_NOT_SUPPORTED, GENERAL_ERROR, INVALID_AMOUNT, ROUTING_ERROR, TRANSACTION_NOT_SUPPORTED, UNABLE_TO_LOCATE_RECORD, UPSTREAM_UNAVAILABLE, ACCOUNT_ALREADY_SETTLED, INVALID_MERCHANT, DO_NOT_HONOR, DECLINED_BY_PARTNER, DECLINED_BY_ACQUIRER, DECLINED_BY_ISSUER, INSUFFICIENT_FUNDS, INVALID_CARD_NUMBER, CARD_EXPIRED, INVALID_TRAN_ID, PARTNER_UNKNOWN, NO_SCAN_RECEIVED, INVALID_ACCOUNT]</i></td>
+    <td>The type of error that occurred. This value should be used for programmatic handling of errors.</td>
+</tr>
+<tr>
+    <td>errorMessage</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>40</i><br/></td>
+    <td>A short description of the error. This value should be suitable for display to an operator.</td>
+</tr>
+<tr>
+    <td>detailMessage</td>
+    <td>object</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>A free form detailed description of a particular failure condition may optionally be supplied. This information is intended for informational purposes only when investigating the cause of a failure.</td>
+</tr>
+<tr>
+    <td>providerErrorCode</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The error code returned by the service provider if available. Note that this should be used for informational purposes only. Messages displayed on the POS should make use of errorType and errorMessage to ensure a consistent set of responses.</td>
+</tr>
+<tr>
+    <td>providerErrorMsg</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The error message returned by the service provider if available. Note that this should be used for informational purposes only. Messages displayed on the POS should make use of errorType and errorMessage to ensure a consistent set of responses.</td>
+</tr>
+<tr>
+    <td>providerRef</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The reference returned by the service provider if available.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The unique transaction identifier related to this transaction if available. This is the value returned in the tranId field of the CreateQrCodeResponse or the ScanNotification.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="institution">Institution</h2>
+
+<p>Originating, acquiring, processing, or receiving institution details
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The institution&rsquo;s ID. API implementations should take care to set this field as appropriate for the implementation.</td>
+</tr>
+<tr>
+    <td>name</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>40</i><br/></td>
+    <td>The institutions&rsquo;s name</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="ledgeramount">LedgerAmount</h2>
+
+<p>An amount object only containing value and currency, and optionally an indicator of DEBIT/CREDIT
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>amount</td>
+    <td>integer</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>int64</i><br/></td>
+    <td>Amount in minor denomination, e.g. R799.95 is encoded as 79995</td>
+</tr>
+<tr>
+    <td>currency</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>pattern:<i>[0-9]{3}</i><br/></td>
+    <td>Three digit currency number from ISO 4217, e.g. South African Rand is encoded as 710</td>
+</tr>
+<tr>
+    <td>ledgerIndicator</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[DEBIT, CREDIT]</i></td>
+    <td>Indicates whether this amount is a debit or a credit. Only required when the amount can be either a debit or a credit</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="merchant">Merchant</h2>
+
+<p>Merchant related data. Must be included if available
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>merchantType</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>pattern:<i>[0-9]{4}</i><br/></td>
+    <td>The assigned four digit merchant category code</td>
+</tr>
+<tr>
+    <td>merchantId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>15</i><br/>minLength:<i>15</i><br/></td>
+    <td>The assigned merchant identifier. Also known as card acceptor id</td>
+</tr>
+<tr>
+    <td>merchantName</td>
+    <td><a href="#merchantname">MerchantName</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The name of a merchant</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="merchantname">MerchantName</h2>
+
+<p>A container object representing the Merchant Name and Location
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>name</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>23</i><br/></td>
+    <td>The merchant or trading as name associated with the merchant</td>
+</tr>
+<tr>
+    <td>city</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>13</i><br/></td>
+    <td>The city where the merchant is located</td>
+</tr>
+<tr>
+    <td>region</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>2</i><br/></td>
+    <td>The state or region where the merchant is located</td>
+</tr>
+<tr>
+    <td>country</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>2</i><br/></td>
+    <td>The country where the merchant is located</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="originator">Originator</h2>
+
+<p>The Originator object encapsulates data relating to the originator of the transaction
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>institution</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The institution originating the request, as issued by Electrum</td>
+</tr>
+<tr>
+    <td>terminalId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>maxLength:<i>8</i><br/>minLength:<i>8</i><br/></td>
+    <td>The ID that uniquely identifies each device or system in an originator&rsquo;s institution capable of sending requests. Required for transactions initiated from physical card entry or point-of-sale devices</td>
+</tr>
+<tr>
+    <td>merchant</td>
+    <td><a href="#merchant">Merchant</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Merchant data. Required if available</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="paymentconfirmation">PaymentConfirmation</h2>
+
+<p>Confirm that a previous {@link PaymentRequest} has completed successfully at the POS. Where possible all optional fields should be supplied to ensure smooth processing. If optional fields are not present then processing may require retrieval of the original transaction leading to unnecessary processing overheads.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this advice, as defined for a variant 4 UUID in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>requestId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The UUID identifying the request that this advice relates to</td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The unaltered thirdPartyIdentifiers array as supplied in the related BasicResponse message. Required if thirdPartyIdentifiers field was present in the BasicResponse. If no thirdPartyIdentifiers was received in the BasicResponse or no BasicResponse was received then this should be set to the thirdPartyIdentifiers sent in the original request.</td>
+</tr>
+<tr>
+    <td>stan</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The System Trace Audit Number can be used to locate transactions across different systems.</td>
+</tr>
+<tr>
+    <td>rrn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This is a reference set by the original source of the transaction.</td>
+</tr>
+<tr>
+    <td>partner</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An echo of the value in the original PaymentRequest.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An echo of the value in the original PaymentRequest.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="paymentrequest">PaymentRequest</h2>
+
+<p>A request to effect a payment with a linked QR code. Such requests originate from the Merchant&#x27;s system and are typically directed to the Partner for processing. If the Partner for a PaymentRequest is not known, then the PaymentRequest may be directed to an intermediate system which receives ScanNotification messages from Partners. This intermediate system is then responsible for identifying the correct Partner to which a PaymentRequest should be directed.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this transaction, as defined for a variant 4 UUID in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>originator</td>
+    <td><a href="#originator">Originator</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the originator of the transaction.</td>
+</tr>
+<tr>
+    <td>client</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the sender of Transaction.</td>
+</tr>
+<tr>
+    <td>settlementEntity</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity with whom the Merchant will settle the transaction.</td>
+</tr>
+<tr>
+    <td>receiver</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity which ultimately processes the request.</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>An array of identifiers which each identify the transaction within each entity&rsquo;s system.</td>
+</tr>
+<tr>
+    <td>slipData</td>
+    <td><a href="#slipdata">SlipData</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Text to be printed on the customer receipt.</td>
+</tr>
+<tr>
+    <td>basketRef</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Used to group multiple transactions which would otherwise be considered independent.</td>
+</tr>
+<tr>
+    <td>tranType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[GOODS_AND_SERVICES, CASH_WITHDRAWAL, DEBIT_ADJUSTMENT, GOODS_AND_SERVICES_WITH_CASH_BACK, NON_CASH, RETURNS, DEPOSIT, CREDIT_ADJUSTMENT, GENERAL_CREDIT, AVAILABLE_FUNDS_INQUIRY, BALANCE_INQUIRY, GENERAL_INQUIRY, CARD_VERIFICATION_INQUIRY, CARDHOLDER_ACCOUNTS_TRANSFER, GENERAL_TRANSFER, PAYMENT_FROM_ACCOUNT, GENERAL_PAYMENT, PAYMENT_TO_ACCOUNT, PAYMENT_FROM_ACCOUNT_TO_ACCOUNT, PLACE_HOLD_ON_CARD, GENERAL_ADMIN, CHANGE_PIN, CARD_HOLDER_INQUIRY, POINTS_INQUIRY]</i></td>
+    <td>Data relating to the type of transaction taking place (i.e. cash withdrawal, goods and services etc.).</td>
+</tr>
+<tr>
+    <td>srcAccType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[DEFAULT, SAVINGS, CHEQUE, CREDIT, UNIVERSAL, ELECTRONIC_PURSE, GIFT_CARD, STORED_VALUE]</i></td>
+    <td>This specifies the type of source account being used in the transaction (i.e. cheque, savings).</td>
+</tr>
+<tr>
+    <td>destAccType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[DEFAULT, SAVINGS, CHEQUE, CREDIT, UNIVERSAL, ELECTRONIC_PURSE, GIFT_CARD, STORED_VALUE]</i></td>
+    <td>This specifies the type of destination account being used in the transaction (i.e. cheque, savings).</td>
+</tr>
+<tr>
+    <td>stan</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The System Trace Audit Number can be used to locate transactions across different systems.</td>
+</tr>
+<tr>
+    <td>rrn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This is a reference set by the original source of the transaction.</td>
+</tr>
+<tr>
+    <td>partner</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity who will process the payment. This identifies the entity who provided the ScanNotification for the QR code associated with this PaymentRequest. This should be populated if known to aid in routing the PaymentRequest to the entity which provided the ScanNotification.</td>
+</tr>
+<tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The amounts pertaining to the transaction. Note that the requestAmount herein maybe be different to that submitted when the QR code was requested. This request amount describes the actual amount to be processed in the transaction.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The unique transaction identifier related to this transaction. Retailers must set this to the same value as that returned in the tranId field of the CreateQrCodeResponse that preceded this PaymentRequest. Partners may associate this PaymentRequest with the QR code whose ScanNotification they submitted with this value.</td>
+</tr>
+<tr>
+    <td>partnerPaymentToken</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>A payment token received from the Partner in the ScanNotification. A Partner may provide such a value in the ScanNotification so that it is included in the PaymentRequest to the Partner. This field should be populated if known. A Partner may expect to receive this value in the PaymentRequest if it was provided in the ScanNotification.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="paymentresponse">PaymentResponse</h2>
+
+<p>The response to a successful payment with a linked QR code scan.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this transaction, as defined for a variant 4 UUID in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>originator</td>
+    <td><a href="#originator">Originator</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the originator of the transaction.</td>
+</tr>
+<tr>
+    <td>client</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the sender of Transaction.</td>
+</tr>
+<tr>
+    <td>settlementEntity</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity with whom the Merchant will settle the transaction.</td>
+</tr>
+<tr>
+    <td>receiver</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity which ultimately processes the request.</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>An array of identifiers which each identify the transaction within each entity&rsquo;s system.</td>
+</tr>
+<tr>
+    <td>slipData</td>
+    <td><a href="#slipdata">SlipData</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Text to be printed on the customer receipt.</td>
+</tr>
+<tr>
+    <td>basketRef</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Used to group multiple transactions which would otherwise be considered independent.</td>
+</tr>
+<tr>
+    <td>tranType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[GOODS_AND_SERVICES, CASH_WITHDRAWAL, DEBIT_ADJUSTMENT, GOODS_AND_SERVICES_WITH_CASH_BACK, NON_CASH, RETURNS, DEPOSIT, CREDIT_ADJUSTMENT, GENERAL_CREDIT, AVAILABLE_FUNDS_INQUIRY, BALANCE_INQUIRY, GENERAL_INQUIRY, CARD_VERIFICATION_INQUIRY, CARDHOLDER_ACCOUNTS_TRANSFER, GENERAL_TRANSFER, PAYMENT_FROM_ACCOUNT, GENERAL_PAYMENT, PAYMENT_TO_ACCOUNT, PAYMENT_FROM_ACCOUNT_TO_ACCOUNT, PLACE_HOLD_ON_CARD, GENERAL_ADMIN, CHANGE_PIN, CARD_HOLDER_INQUIRY, POINTS_INQUIRY]</i></td>
+    <td>Data relating to the type of transaction taking place (i.e. cash withdrawal, goods and services etc.).</td>
+</tr>
+<tr>
+    <td>srcAccType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[DEFAULT, SAVINGS, CHEQUE, CREDIT, UNIVERSAL, ELECTRONIC_PURSE, GIFT_CARD, STORED_VALUE]</i></td>
+    <td>This specifies the type of source account being used in the transaction (i.e. cheque, savings).</td>
+</tr>
+<tr>
+    <td>destAccType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[DEFAULT, SAVINGS, CHEQUE, CREDIT, UNIVERSAL, ELECTRONIC_PURSE, GIFT_CARD, STORED_VALUE]</i></td>
+    <td>This specifies the type of destination account being used in the transaction (i.e. cheque, savings).</td>
+</tr>
+<tr>
+    <td>stan</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The System Trace Audit Number can be used to locate transactions across different systems.</td>
+</tr>
+<tr>
+    <td>rrn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This is a reference set by the original source of the transaction.</td>
+</tr>
+<tr>
+    <td>partner</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity who processed the PaymentRequest. This identifies the entity who provided the ScanNotification for the QR code associated with this payment.</td>
+</tr>
+<tr>
+    <td>tenders</td>
+    <td>array[<a href="#tender">Tender</a>]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An array of tenders used to pay for the transaction. This may be used to describe the payment which was effected as a result of the QR code scan e.g. the card detail ultimately used for the payment.</td>
+</tr>
+<tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The amounts pertaining to the transaction.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>This value is echoed from the PaymentRequest.</td>
+</tr>
+<tr>
+    <td>partnerPaymentToken</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This value is echoed from the PaymentRequest.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="paymentreversal">PaymentReversal</h2>
+
+<p>Reverse a previous PaymentRequest. This may be due to a cancellation at the POS or because the original PaymentRequest failed or is in an unknown state. Where possible all optional fields should be supplied to ensure smooth processing. If optional fields are not present then processing may require retrieval of the original transaction leading to unnecessary processing overheads.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this advice, as defined for a variant 4 UUID in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>requestId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The UUID identifying the request that this advice relates to</td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The unaltered thirdPartyIdentifiers array as supplied in the related BasicResponse message. Required if thirdPartyIdentifiers field was present in the BasicResponse. If no thirdPartyIdentifiers was received in the BasicResponse or no BasicResponse was received then this should be set to the thirdPartyIdentifiers sent in the original request.</td>
+</tr>
+<tr>
+    <td>stan</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The System Trace Audit Number can be used to locate transactions across different systems.</td>
+</tr>
+<tr>
+    <td>rrn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>This is a reference set by the original source of the transaction.</td>
+</tr>
+<tr>
+    <td>reversalReason</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td><i>[TIMEOUT, CANCELLED, RESPONSE_NOT_FINAL]</i></td>
+    <td>The reason for the reversal</td>
+</tr>
+<tr>
+    <td>partner</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An echo of the value in the original PaymentRequest.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An echo of the value in the original PaymentRequest.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="scannotification">ScanNotification</h2>
+
+<p>A notification sent by the Partner indicating that the Partner received a scan of the QR code linked to the transaction ID. Any PaymentRequest with a matching tranId value should be forwarded to the Partner for processing.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The randomly generated UUID identifying this notification. This may be a variant 3 or 4 as defined in <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a></td>
+</tr>
+<tr>
+    <td>time</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The date and time of the message as recorded by the sender. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>partner</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity whose customer scanned a QR code. PaymentRequest messages which have a matching tranId value should be be sent to the Partner for processing.</td>
+</tr>
+<tr>
+    <td>settlementEntity</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity with whom the Merchant will settle the transaction. A Partner may provide this information if known at the time the QR code was scanned.</td>
+</tr>
+<tr>
+    <td>receiver</td>
+    <td><a href="#institution">Institution</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Data relating to the entity which ultimately processes the request. A Partner may provide this information if known at the time the QR code was scanned.</td>
+</tr>
+<tr>
+    <td>thirdPartyIdentifiers</td>
+    <td>array[<a href="#thirdpartyidentifier">ThirdPartyIdentifier</a>]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An array of identifiers which identify the transaction within each entity&rsquo;s system.</td>
+</tr>
+<tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The amounts pertaining to the QR code which was scanned.</td>
+</tr>
+<tr>
+    <td>tranId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The transaction identifier encoded within the QR Code which was scanned. Any PaymentRequest with a matching tranId value should be forwarded to the Partner for processing.</td>
+</tr>
+<tr>
+    <td>partnerPaymentToken</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>A payment token received from the partner in the ScanNotification. If supplied by the Partner then it will be echoed in the PaymentRequest to the Partner.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="slipdata">SlipData</h2>
+
+<p>Data that may be printed on the customer slip for information purposes
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>messageLines</td>
+    <td>array[<a href="#slipline">SlipLine</a>]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>An array of text lines and optional formatting to be printed on the customer slip.</td>
+</tr>
+<tr>
+    <td>slipWidth</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td>The width of the slip in normal (unformatted) characters.</td>
+</tr>
+<tr>
+    <td>issuerReference</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>[A-Z0-9]{1,40}</i><br/></td>
+    <td>An identifier that is printed on the customer slip and uniquely identifies the payment on the service provider&rsquo;s system. This value is used by the customer to request a refund when the service supports this function, and it is thus important that this number is unique.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="slipline">SlipLine</h2>
+
+<p>A line of text to be printed on the till slip
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>barcode</td>
+    <td><a href="#barcode">Barcode</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Barcode information for this line</td>
+</tr>
+<tr>
+    <td>text</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>Text contained on the line</td>
+</tr>
+<tr>
+    <td>fontWidthScaleFactor</td>
+    <td>number</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>double</i><br/></td>
+    <td>Scale factor for font width. Assume 1.0 (i.e. normal size) if not present.</td>
+</tr>
+<tr>
+    <td>fontHeightScaleFactor</td>
+    <td>number</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>double</i><br/></td>
+    <td>Scale factor for font height. Assume 1.0 (i.e. normal size) if not present.</td>
+</tr>
+<tr>
+    <td>line</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Denotes a solid line on the slip. Assume false if not present.</td>
+</tr>
+<tr>
+    <td>cut</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Indicates the slip should be cut at this line. Assume false if not present.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="tender">Tender</h2>
+
+<p>Details of the Tender used by a customer towards a payment
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>accountType</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[DEFAULT, SAVINGS, CHEQUE, CREDIT, UNIVERSAL, ELECTRONIC_PURSE, STORED_VALUE]</i></td>
+    <td>The type of account</td>
+</tr>
+<tr>
+    <td>amount</td>
+    <td><a href="#ledgeramount">LedgerAmount</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The tendered amount</td>
+</tr>
+<tr>
+    <td>cardNumber</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>[0-9]{6}[0-9*]{0,13}</i><br/></td>
+    <td>A PCI compliant masked card number, with at least the first 6 digits in the clear. Only applicable to card based transactions</td>
+</tr>
+<tr>
+    <td>reference</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>maxLength:<i>40</i><br/></td>
+    <td>A free text reference</td>
+</tr>
+<tr>
+    <td>tenderType</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td><i>[CASH, CHEQUE, CREDIT_CARD, DEBIT_CARD, WALLET, ROUNDING, GIFT_CARD, LOYALTY_CARD, OTHER]</i></td>
+    <td>The type of tender used</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="thirdpartyidentifier">ThirdPartyIdentifier</h2>
+
+<p>An identifier assigned by an entity which process the message. Identifiers are keyed by institution ID thereby enabling any institution to recall a transaction within the entity&#x27;s own system using the entity&#x27;s own identifier. Entity&#x27;s must not alter the identifier set by another entity. Once an identifier has been set by an entity, all other entity&#x27;s must send that identifier in subsequent messages.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>institutionId</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The entity&rsquo;s institution ID.</td>
+</tr>
+<tr>
+    <td>transactionIdentifier</td>
+    <td>string</td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>The identifier assigned to this transaction by the institution represented in institutionId. This value should be unique within the institution&rsquo;s system.</td>
+</tr></p>
+
+<p></table></p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the Apache 2.0 license
+				
+			</aside>
+
+			<footer class="footer">
+				<nav class="pagination" aria-label="Footer">
+  <div >
+    <img src="/images/logo-small-white.png" align="right"/>
+  </div>
+</nav>
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'electrumpayments\/qr-payment-service-interface';
+    
+    </script>
+
+    <script src="/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(headers.length > 0) {
+        for(var i = 0; i < headers.length; i++) {
+          var li = document.createElement("li");
+          li.setAttribute("class", "anchor");
+
+          var a  = document.createElement("a");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", headers[i].innerHTML);
+          a.innerHTML = headers[i].innerHTML;
+          
+          li.appendChild(a)
+          scrollspy.appendChild(li);
+        }
+      } else {
+        scrollspy.parentElement.removeChild(scrollspy)
+      }
+      
+
+      /* Add permanent link next to the headers */
+      var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+      for(var i = 0; i < headers.length; i++) {
+          var a = document.createElement("a");
+          a.setAttribute("class", "headerlink");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", "Permanent link")
+          a.innerHTML = "#";
+          headers[i].appendChild(a);
+      }
+    </script>
+
+    
+
+    <script src="//gohugo.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

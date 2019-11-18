@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <title>Advanced Topics - QR Payment Service Interface</title>
+    <meta name="generator" content="Hugo 0.29" />
+
+    
+    <link rel="canonical" href="/advanced-topics/">
+    
+
+    <meta property="og:url" content="/advanced-topics/">
+    <meta property="og:title" content="QR Payment Service Interface">
+    <meta property="og:image" content="/images/logo-square.png">
+    <meta name="apple-mobile-web-app-title" content="QR Payment Service Interface">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot?52m981');
+        src: url('/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff?52m981')
+               format('woff'),
+             url('/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/highlight/highlight.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/palettes.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu%2bMono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-cyan palette-accent-orange">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        QR Payment Service Interface
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/electrumpayments" title="@electrumpayments on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/electrumpayments/qr-payment-service-interface" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="/images/logo-square.png">
+        </div>
+      
+      <div class="name">
+        
+          <br>
+          electrumpayments/qr-payment-service-interface
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Getting Started" href="/getting-started/">
+	
+	Getting Started
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Terminology" href="/terminology/">
+	
+	Terminology
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Protocol Basics" href="/protocol-basics/">
+	
+	Protocol Basics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner And Retailer Implementations" href="/partner-vs-retailer-implementations/">
+	
+	Partner And Retailer Implementations
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Retailer Message Flows" href="/retailer-message-flows/">
+	
+	Retailer Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Partner Message Flows" href="/partner-message-flows/">
+	
+	Partner Message Flows
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Advanced Topics" href="/advanced-topics/">
+	
+	Advanced Topics
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+  <span class="section">Specification</span>
+    <ul>
+      
+        
+        
+
+
+
+<a  title="Introduction" href="/specification/introduction/">
+	
+	Introduction
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Operations" href="/specification/operations/">
+	
+	Operations
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Definitions" href="/specification/definitions/">
+	
+	Definitions
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Swagger" href="/specification/swagger/">
+	
+	Swagger
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Release Notes" href="/specification/release-notes/">
+	
+	Release Notes
+</a>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Advanced Topics </h1>
+
+			
+
+<h2 id="linking-qr-code-scans-and-payment-requests">Linking QR code scans and Payment Requests</h2>
+
+<p>Successful QR code payment processing requires a link between the customer&rsquo;s scan of a QR code and the retailer&rsquo;s request to tender. This linking is performed by Electrum, which facilitates the aggregation of multiple QR payment partners and hence simplifies the point-of-sale interface by obviating the need for knowing which partner will process the payment when initiating the transaction. If a partner&rsquo;s mobile application is used to scan a QR code and the partner recognises the Merchant Account Information Template <a href="#the-electrum-merchant-account-information-template">defined by Electrum</a> within the QR code, then the partner may interact with retailers in a consistent manner via Electrum.</p>
+
+<p>To enable linking, it is necessary for all <code>paymentRequest</code> and <code>scanNotification</code> operations to contain the same transaction identifier (<code>tranId</code>). This allows for them to be matched and the payment processed correctly. The transaction ID serves as a golden thread throughout the transaction flow and allows related transactions between retailers and partners to be associated correctly. It is thus imperative that the transaction ID is set correctly throughout the flow.</p>
+
+<p>Below is a diagram with the transaction ID highlighted to better illustrate its use.</p>
+
+<p><img src="/images/full_qr_flow_showing_tranid.png" alt="QR Payment Flow" title="QR Payment Flow Highlighting the Transaction ID." /></p>
+
+<p>Note that the <code>tranId</code> is distinct from a message identifier in that it links all QR messages even if the messages are sent from different parties. Whilst message IDs (discussed further in the section <a href="#request-id-construction-and-handling">Request ID Construction And Handling</a> below) may be used by the sender of messages to link different messages, the <code>tranId</code> is used by different parties to ensure their separate transactions may also be linked. The <code>tranId</code> field is necessary to perform this function because different parties (such as the merchant and partner) will not know the message IDs assigned by each other.</p>
+
+<h2 id="qr-code-structure">QR Code Structure</h2>
+
+<h3 id="organization-of-data">Organization of data</h3>
+
+<p>The structure of the QR code is based on a subset of the <a href="https://www.emvco.com/wp-content/plugins/pmpro-customizations/oy-getfile.php?u=/wp-content/uploads/documents/EMVCo-Merchant-Presented-QR-Specification-v1-1.pdf">EMV QR specification (Merchant Presented Mode)</a> as set out by EMVco.</p>
+
+<p>The QR code is a string of data comprised of a number of data objects; each containing three fields:</p>
+
+<ol>
+<li>A Tag, which identifies the data element within the QR code.</li>
+<li>A Length field, which specifies exactly how many characters comprise the third field.</li>
+<li>A Value field in which the data is contained.</li>
+</ol>
+
+<p>The format of the above fields is as follows:</p>
+
+<ol>
+<li>The Tag is a two-digit numeric value ranging from &lsquo;00&rsquo; to &lsquo;99&rsquo;</li>
+<li>The Length field is a two-digit numeric value ranging from &lsquo;01&rsquo; to &lsquo;99&rsquo;</li>
+<li>The Value field is an alpha-numeric string with a minimum length of 1 character and a maximum length of 99 characters.</li>
+</ol>
+
+<p>Value fields themselves contain either primitive data values or other complex data objects that also follow the same Tag-Length-Value layout described above.</p>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>The QR data will always begin with Tag &lsquo;00&rsquo;. In the context of EMVCo QR data this is reserved for the EMVCo specification version being used. Currently only the first version of the EMVCo specification is supported, hence this Tag will have a Value of &lsquo;01&rsquo;. The specification version Value of &lsquo;01&rsquo; itself has a Length of &lsquo;02&rsquo;. Therefore, the first data element within the QR code data will be &lsquo;000201&rsquo;:</p>
+
+<ul>
+<li>Tag = &lsquo;00&rsquo;</li>
+<li>Length = &lsquo;02&rsquo;</li>
+<li>Value = &lsquo;01&rsquo;</li>
+</ul>
+
+<p>The EMVCo specification reserves Tags 26 to 51 for Merchant Account Information Templates. Aside from the EMVCo specification version in Tag &lsquo;00&rsquo; as described above, only Tags 26 to 51 are currently supported by the Electrum QR Payment Service Interface.</p>
+
+<p>The format of Values in Tags 26 to 51 is the same Tag-Length-Value format described earlier. It is possible for a QR code to contain the information for a number of distinct entities, in which case a data object for each will be present in Tags 26 to 51.</p>
+
+<p>Within each data object in Tags 26 to 51, the EMVCo specification requires that the first sub-tag (Tag &lsquo;00&rsquo;) contain a globally unique identifier (GUID), which provides context regarding the remainder of the sub-tags. Any application which parses the QR data may then, with the context provided by sub-Tag &lsquo;00&rsquo;, interpret the remaining sub-tags.</p>
+
+<h3 id="the-electrum-merchant-account-information-template">The Electrum Merchant Account Information Template</h3>
+
+<p>Electrum defines the following format of the Merchant Account Information Template set by Electrum within a QR code.</p>
+
+<ul>
+<li>Sub-Tag &lsquo;00&rsquo; will contain a unique provider identifier. This is a globally unique value through which the provider of the QR code may be identified.</li>
+<li>Sub-Tag &lsquo;01&rsquo; will contain the unique transaction reference to be associated with all transactions linked to the QR code.</li>
+<li>No further sub-tags are defined at this time.</li>
+</ul>
+
+<h4 id="examples">Examples</h4>
+
+<p>Below is an example of when an Electrum QR Payment is the only payment instrument provided:</p>
+
+<p>Payload: <code>00020126500010za.co.elec0132f82d7f64feea4f2ab24da94aaf5c2941</code></p>
+
+<p>Breakdown:</p>
+
+<p><code>00 02</code>
+&gt; <code>01</code></p>
+
+<p><code>26 50</code>
+&gt; <code>00 10</code>
+&gt;&gt; <code>za.co.elec</code></p>
+
+<blockquote>
+<p><code>01 32</code>
+&gt; <code>f82d7f64feea4f2ab24da94aaf5c2941</code></p>
+</blockquote>
+
+<p>Below is an example of where both Electrum QR Payment and Masterpass are provided:</p>
+
+<p>Payload: <code>00020126500010za.co.elec0132f82d7f64feea4f2ab24da94aaf5c294127260008za.co.mp01105169175130</code></p>
+
+<p>Breakdown:</p>
+
+<p><code>00 02</code>
+&gt; <code>01</code></p>
+
+<p><code>26 50</code>
+&gt; <code>00 10</code>
+&gt;&gt; <code>za.co.elec</code></p>
+
+<blockquote>
+<p><code>01 32</code>
+&gt; <code>f82d7f64feea4f2ab24da94aaf5c2941</code></p>
+</blockquote>
+
+<p><code>27 26</code>
+&gt; <code>00 08</code>
+&gt;&gt; <code>za.co.mp</code></p>
+
+<blockquote>
+<p><code>01 10</code>
+&gt; <code>5169175130</code></p>
+</blockquote>
+
+<h2 id="request-id-construction-and-handling">Request ID Construction And Handling</h2>
+
+<p>Generation of UUIDs for payment authorisation request messages is an important step in the request process.
+The <code>id</code> field of messages such as <code>PaymentRequest</code> and <code>PaymentReversal</code> uniquely identifies an instance of
+such a message. For linked transactions, such as a <code>PaymentReversal</code> which reverses a prior <code>PaymentRequest</code>,
+the <code>id</code> of the <code>PaymentRequest</code> is referenced in the <code>PaymentReversal</code> to make it clear which <code>PaymentRequest</code>
+transaction is referenced in the <code>PaymentReversal</code>. It is therefore important that the ID value generated by a
+client is unique for that client. If you are developing a client implementation, please take note to generate
+IDs as either random UUID&rsquo;s, as defined for a variant 4 UUID by <a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>
+or variant 3 UUIDs derived from values unique to the message.</p>
+
+<p>These request identifiers must uniquely identify a request within your own client implementation. If possible, the client
+should check that the UUID generated for a message has not been previously generated. If the UUID has been used previously,
+then the client should generate a new UUID. This process should be repeated as necessary until a unique UUID has been generated.</p>
+
+<p>This specification acknowledges that since clients produce random UUIDs, there is a possibility that a client might repeat an
+ID for two independent messages of the same type if the client is unable to perform the above checks. Furthermore, independent
+clients may submit two distinct requests with the same UUIDs. Therefore, if you are developing a server implementation,
+take care to verify that a request to create a resource does not contain an ID that already exists in the system.
+All such requests must be declined with a status code of 400 and an <a href="/definitions/#ErrorDetail">ErrorType</a> of
+DUPLICATE_RECORD.</p>
+
+<p>Finally, if a client receives an HTTP 400 response with an <a href="/definitions/#ErrorDetail">ErrorType</a>
+of DUPLICATE_RECORD, it is suggested that the client simply generate a new UUID for the request and resubmit the
+request with the new UUID.</p>
+
+<h2 id="store-and-forward">Store-and-forward</h2>
+
+<p>To ensure that loss of transactional data is minimised, the Electrum QR Payment Service Interface requires clients to
+store advice messages in persistent storage and keep them queued until a final status type is received.
+A final response is one of either the <em>successful</em> or <em>failed</em> status types. If the
+service is not responding, or responding with an <em>unknown</em> status type, advice messages shall be queued
+and the message at the head of the queue repeated regularly until a final status type is received.
+For high throughput systems, it is acceptable to send several messages in parallel.
+Client and server systems in high throughput environments should therefore be prepared to process advice and
+advice response messages in any order.</p>
+
+<p>The above applies to the following operations:</p>
+
+<ul>
+<li>Confirmation</li>
+<li>Reversal</li>
+</ul>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the Apache 2.0 license
+				
+			</aside>
+
+			<footer class="footer">
+				<nav class="pagination" aria-label="Footer">
+  <div >
+    <img src="/images/logo-small-white.png" align="right"/>
+  </div>
+</nav>
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'electrumpayments\/qr-payment-service-interface';
+    
+    </script>
+
+    <script src="/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(headers.length > 0) {
+        for(var i = 0; i < headers.length; i++) {
+          var li = document.createElement("li");
+          li.setAttribute("class", "anchor");
+
+          var a  = document.createElement("a");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", headers[i].innerHTML);
+          a.innerHTML = headers[i].innerHTML;
+          
+          li.appendChild(a)
+          scrollspy.appendChild(li);
+        }
+      } else {
+        scrollspy.parentElement.removeChild(scrollspy)
+      }
+      
+
+      /* Add permanent link next to the headers */
+      var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+      for(var i = 0; i < headers.length; i++) {
+          var a = document.createElement("a");
+          a.setAttribute("class", "headerlink");
+          a.setAttribute("href", "#" + headers[i].id);
+          a.setAttribute("title", "Permanent link")
+          a.innerHTML = "#";
+          headers[i].appendChild(a);
+      }
+    </script>
+
+    
+
+    <script src="//gohugo.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
