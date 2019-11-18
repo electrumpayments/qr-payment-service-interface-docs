@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Specifications on QR Payment Service Interface</title>
-    <link>/specification/</link>
+    <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/</link>
     <description>Recent content in Specifications on QR Payment Service Interface</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the Apache 2.0 license</copyright>
     
-	<atom:link href="/specification/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Definitions</title>
-      <link>/specification/definitions/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/definitions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/definitions/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/definitions/</guid>
       <description>Amounts Amounts which make up the transaction. Absent amounts have zero value.  Name Type Required Default Restrictions Description   requestAmount LedgerAmount optional   The transaction amount requested by the customer to be authorised or approved. This is the total amount the customer wishes to pay for a service or virtual product.   approvedAmount LedgerAmount optional   The transaction amount which was approved by the upstream entity.</description>
     </item>
     
     <item>
       <title>Introduction</title>
-      <link>/specification/introduction/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/introduction/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</guid>
       <description> Version 1.1.0
 The Electrum QR Payment Service describes an interface for supporting payments via scanning of a QR code transactions.
 Email Electrum Support
@@ -35,10 +35,10 @@ Security Definitions httpBasic   type basic   description All requests require H
     
     <item>
       <title>Operations</title>
-      <link>/specification/operations/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/operations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/operations/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/operations/</guid>
       <description>pay Requests a payment to be processed via a QR Partner.
 POST /payments
 This request contains conventional payment information (POS information, transaction amount, date etc.) as well as Partner information. If a merchant is unable to supply the Partner information in this request, then the request is directed to an intermediate system which also receives notifications from Partners of QR scans. This intermediate system will match the payment request from the merchant with the scan notification from the Partner using the QR code information common to both messages.</description>
@@ -46,22 +46,21 @@ This request contains conventional payment information (POS information, transac
     
     <item>
       <title>Release Notes</title>
-      <link>/specification/release-notes/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/release-notes/</guid>
-      <description> This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.
-v1.1.0 Unreleased
- All documentation was reviewed and updated for correctness. equals, toString and hashcode methods where altered to refer to super methods rather than directly re-using inherited fields. The maximum length of the errorMessage field in the ErrorDetail model was increased to 40 characters.  v1.0.0 Released 9 October 2019
- Initial release  </description>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/release-notes/</guid>
+      <description>This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.
+v1.1.0 Released 18 November 2019
+ All documentation was reviewed and updated for correctness. equals, toString and hashcode methods where altered to refer to super methods rather than directly re-using inherited fields. The maximum length of the errorMessage field in the ErrorDetail model was increased to 40 characters.  v1.0.0 Released 9 October 2019</description>
     </item>
     
     <item>
       <title>Swagger</title>
-      <link>/specification/swagger/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/swagger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/swagger/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/swagger/</guid>
       <description>The swagger (Open API) definition of the interface specification can be found here, as well as below.
 Many tools are available for processing swagger files, and using a code generation tool to create a boilerplate client or server can be an excellent starting point for development. We highly recommend looking at swagger-codegen for a generator in your preferred language when starting out.
 Swagger definition --- swagger: &amp;quot;2.0&amp;quot; info: description: &amp;quot;The Electrum QR Payment Service describes an interface for supporting\ \ payments via scanning of a QR code transactions.</description>

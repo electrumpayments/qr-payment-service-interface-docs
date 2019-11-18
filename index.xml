@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>QR Payment Service Interface</title>
-    <link>/</link>
+    <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/</link>
     <description>Recent content on QR Payment Service Interface</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the Apache 2.0 license</copyright>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://electrumpayments.github.io/qr-payment-service-interface-docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Advanced Topics</title>
-      <link>/advanced-topics/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/advanced-topics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/advanced-topics/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/advanced-topics/</guid>
       <description>Linking QR code scans and Payment Requests Successful QR code payment processing requires a link between the customer&amp;rsquo;s scan of a QR code and the retailer&amp;rsquo;s request to tender. This linking is performed by Electrum, which facilitates the aggregation of multiple QR payment partners and hence simplifies the point-of-sale interface by obviating the need for knowing which partner will process the payment when initiating the transaction. If a partner&amp;rsquo;s mobile application is used to scan a QR code and the partner recognises the Merchant Account Information Template defined by Electrum within the QR code, then the partner may interact with retailers in a consistent manner via Electrum.</description>
     </item>
     
     <item>
       <title>Definitions</title>
-      <link>/specification/definitions/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/definitions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/definitions/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/definitions/</guid>
       <description>Amounts Amounts which make up the transaction. Absent amounts have zero value.  Name Type Required Default Restrictions Description   requestAmount LedgerAmount optional   The transaction amount requested by the customer to be authorised or approved. This is the total amount the customer wishes to pay for a service or virtual product.   approvedAmount LedgerAmount optional   The transaction amount which was approved by the upstream entity.</description>
     </item>
     
     <item>
       <title>Getting Started</title>
-      <link>/getting-started/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/getting-started/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/getting-started/</guid>
       <description>The Electrum QR Payment Service Interface is a RESTful HTTP based messaging protocol, intended to provide retailers and partners with a framework to facilitate QR code payments.
 The Electrum QR Payment Service Interface is licensed under an Apache 2.0 license.
 Language Support Java The Electrum implementation of the Electrum QR Payment Service Interface is written in Java. If you are planning a Java implementation of the Electrum QR Payment Service Interface, then it is highly recommended that you include the Electrum Payment QR Service Interface as a dependency in your project to save you from having to re-implement the interface.</description>
@@ -42,10 +42,10 @@ Language Support Java The Electrum implementation of the Electrum QR Payment Ser
     
     <item>
       <title>Introduction</title>
-      <link>/specification/introduction/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/introduction/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</guid>
       <description> Version 1.1.0
 The Electrum QR Payment Service describes an interface for supporting payments via scanning of a QR code transactions.
 Email Electrum Support
@@ -55,10 +55,10 @@ Security Definitions httpBasic   type basic   description All requests require H
     
     <item>
       <title>Operations</title>
-      <link>/specification/operations/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/operations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/operations/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/operations/</guid>
       <description>pay Requests a payment to be processed via a QR Partner.
 POST /payments
 This request contains conventional payment information (POS information, transaction amount, date etc.) as well as Partner information. If a merchant is unable to supply the Partner information in this request, then the request is directed to an intermediate system which also receives notifications from Partners of QR scans. This intermediate system will match the payment request from the merchant with the scan notification from the Partner using the QR code information common to both messages.</description>
@@ -66,29 +66,29 @@ This request contains conventional payment information (POS information, transac
     
     <item>
       <title>Partner And Retailer Implementations</title>
-      <link>/partner-vs-retailer-implementations/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/partner-vs-retailer-implementations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/partner-vs-retailer-implementations/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/partner-vs-retailer-implementations/</guid>
       <description>Retailer And Partner Roles The Electrum QR Payment Service Interface describes an interface for QR code based transactions. It defines operations between retailers and partners necessary for effecting QR based transactions. However, QR based transactions deviate from conventional request/response-based transaction APIs by allowing the partner (who sits in an upstream position with respect to a retailer) to initiate communications with the retailer. In a conventional card-based transaction this would be similar to an acquiring bank initiating a request to a retailer ahead of a transaction, which is not a typical pattern within card-based payment APIs.</description>
     </item>
     
     <item>
       <title>Partner Message Flows</title>
-      <link>/partner-message-flows/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/partner-message-flows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/partner-message-flows/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/partner-message-flows/</guid>
       <description>Overview From a partner perspective, a QR payment flow comprises the following operations:
  Notifying Electrum of a QR Code scan. Receiving a payment authorisation request associated with the above scan. Finalising or reversing this payment based on the advice message received.  Scan Notifications Once a scan is made by a mobile application it is necessary to notify the Electrum server of this action by sending a ScanNotification. As it is not possible for the retailer to know at tender time which partner has been selected by the customer, the ScanNotification plays the important role of alerting the Electrum system which partner has been selected for a given PaymentRequest.</description>
     </item>
     
     <item>
       <title>Protocol Basics</title>
-      <link>/protocol-basics/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/protocol-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/protocol-basics/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/protocol-basics/</guid>
       <description>The Electrum QR Payment Service Interface is an HTTP RESTFul interface.
 Terminology The Electrum QR Payment Service Interface documentation utilises several specific terms, which for clarity are defined below.
 Upstream And Downstream Entities Upstream and downstream impart a convention for the direction for a request and its response. A request message (such as a payment request) typically originates at a retailer location and must be sent to the partner for processing.</description>
@@ -96,10 +96,10 @@ Upstream And Downstream Entities Upstream and downstream impart a convention for
     
     <item>
       <title>Qr Payment Service Interface</title>
-      <link>/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/</guid>
       <description>Electrum Payments connects businesses together to transact with each other easily and robustly.
 This Electrum QR Payment Service Interface documents the messaging interface used by Electrum to connect retailers and merchants together for performing QR code based payments.
 The lifecycle of a QR code based payment can be encapsulated into four major phases - namely:
@@ -108,22 +108,21 @@ The lifecycle of a QR code based payment can be encapsulated into four major pha
     
     <item>
       <title>Release Notes</title>
-      <link>/specification/release-notes/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/release-notes/</guid>
-      <description> This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.
-v1.1.0 Unreleased
- All documentation was reviewed and updated for correctness. equals, toString and hashcode methods where altered to refer to super methods rather than directly re-using inherited fields. The maximum length of the errorMessage field in the ErrorDetail model was increased to 40 characters.  v1.0.0 Released 9 October 2019
- Initial release  </description>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/release-notes/</guid>
+      <description>This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.
+v1.1.0 Released 18 November 2019
+ All documentation was reviewed and updated for correctness. equals, toString and hashcode methods where altered to refer to super methods rather than directly re-using inherited fields. The maximum length of the errorMessage field in the ErrorDetail model was increased to 40 characters.  v1.0.0 Released 9 October 2019</description>
     </item>
     
     <item>
       <title>Retailer Message Flows</title>
-      <link>/retailer-message-flows/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/retailer-message-flows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/retailer-message-flows/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/retailer-message-flows/</guid>
       <description>Overview From a retailer perspective the QR payment flow comprises of the following operations:
  Requesting and displaying a QR code Making a payment authorisation request based on this QR code Finalising or reversing this payment  Request a QR Code The message flow to request a QR code works in the following manner:
  The retailer requests a QR code to be generated using the getQrCode operation. The QR server returns a QR code containing a unique transaction ID (tranId).</description>
@@ -131,10 +130,10 @@ v1.1.0 Unreleased
     
     <item>
       <title>Swagger</title>
-      <link>/specification/swagger/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/swagger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/specification/swagger/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/swagger/</guid>
       <description>The swagger (Open API) definition of the interface specification can be found here, as well as below.
 Many tools are available for processing swagger files, and using a code generation tool to create a boilerplate client or server can be an excellent starting point for development. We highly recommend looking at swagger-codegen for a generator in your preferred language when starting out.
 Swagger definition --- swagger: &amp;quot;2.0&amp;quot; info: description: &amp;quot;The Electrum QR Payment Service describes an interface for supporting\ \ payments via scanning of a QR code transactions.</description>
@@ -142,10 +141,10 @@ Swagger definition --- swagger: &amp;quot;2.0&amp;quot; info: description: &amp;
     
     <item>
       <title>Terminology</title>
-      <link>/terminology/</link>
+      <link>https://electrumpayments.github.io/qr-payment-service-interface-docs/terminology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/terminology/</guid>
+      <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/terminology/</guid>
       <description>Term Definition     Advice A transaction indicating that a transaction must either be finalised or reversed.   Confirmation Advice message indicating that a transaction has been finalised.   Downstream Message flow in the direction toward POS.   Message A sequence of data sent from one party to another.   Partner Entity who provides an application capable of scanning QR codes and who accepts responsibility for processing transactions associated with the QR code.</description>
     </item>
     

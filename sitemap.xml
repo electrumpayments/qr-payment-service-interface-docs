@@ -3,75 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/advanced-topics/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/advanced-topics/</loc>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/specification/definitions/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/definitions/</loc>
   </url>
   
   <url>
-    <loc>/getting-started/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/getting-started/</loc>
   </url>
   
   <url>
-    <loc>/specification/introduction/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</loc>
   </url>
   
   <url>
-    <loc>/specification/operations/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/operations/</loc>
   </url>
   
   <url>
-    <loc>/partner-vs-retailer-implementations/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/partner-vs-retailer-implementations/</loc>
   </url>
   
   <url>
-    <loc>/partner-message-flows/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/partner-message-flows/</loc>
   </url>
   
   <url>
-    <loc>/protocol-basics/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/protocol-basics/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/</loc>
   </url>
   
   <url>
-    <loc>/specification/release-notes/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/release-notes/</loc>
   </url>
   
   <url>
-    <loc>/retailer-message-flows/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/retailer-message-flows/</loc>
   </url>
   
   <url>
-    <loc>/specification/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/specification/swagger/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/swagger/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/terminology/</loc>
+    <loc>https://electrumpayments.github.io/qr-payment-service-interface-docs/terminology/</loc>
   </url>
   
 </urlset>
