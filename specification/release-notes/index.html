@@ -369,6 +369,26 @@
 
 <p>This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.</p>
 
+<h2 id="v1-3-0">v1.3.0</h2>
+
+<p>Released 10 January 2020</p>
+
+<ul>
+<li>Updates to the Java implementation of the QR Payment Service Interface:
+
+<ul>
+<li>The <code>equals</code> method of the following classes has been corrected to not call the super method from the <code>Object</code> class:
+
+<ul>
+<li><code>ScanNotification</code></li>
+<li><code>CreateQrCodeMessage</code></li>
+<li><code>PaymentRequest</code></li>
+<li><code>PaymentResponse</code></li>
+</ul></li>
+<li>Added the <code>equals</code> and <code>hashCode</code> method to the <code>PaymentConfirmation</code> class.</li>
+</ul></li>
+</ul>
+
 <h2 id="v1-2-0">v1.2.0</h2>
 
 <p>Released 10 January 2020</p>
