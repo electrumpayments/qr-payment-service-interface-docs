@@ -46,7 +46,7 @@ Language Support Java The Electrum implementation of the Electrum QR Payment Ser
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</guid>
-      <description> Version 1.1.0
+      <description> Version 1.2.0
 The Electrum QR Payment Service describes an interface for supporting payments via scanning of a QR code transactions.
 Email Electrum Support
 Licensed under Apache 2.0
@@ -113,8 +113,8 @@ The lifecycle of a QR code based payment can be encapsulated into four major pha
       
       <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/release-notes/</guid>
       <description>This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.
-v1.1.0 Released 18 November 2019
- All documentation was reviewed and updated for correctness. equals, toString and hashcode methods where altered to refer to super methods rather than directly re-using inherited fields. The maximum length of the errorMessage field in the ErrorDetail model was increased to 40 characters.  v1.0.0 Released 9 October 2019</description>
+v1.2.0 Released 10 January 2020
+ Updates to the Java implementation of the QR Payment Service Interface:  The Java implementation is now built against OpenJDK 11. The hashCode method of the following classes has been corrected to not use the method from the Object class:  ScanNotification CreateQrCodeMessage   The QR Payment Service Interface is now built against v3.</description>
     </item>
     
     <item>

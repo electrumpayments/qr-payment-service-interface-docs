@@ -369,6 +369,30 @@
 
 <p>This page describes changes to the QR Payment Service Interface implemented across different releases of the interface.</p>
 
+<h2 id="v1-2-0">v1.2.0</h2>
+
+<p>Released 10 January 2020</p>
+
+<ul>
+<li>Updates to the Java implementation of the QR Payment Service Interface:
+
+<ul>
+<li>The Java implementation is now built against OpenJDK 11.</li>
+<li>The <code>hashCode</code> method of the following classes has been corrected to not use the method from the <code>Object</code> class:
+
+<ul>
+<li><code>ScanNotification</code></li>
+<li><code>CreateQrCodeMessage</code></li>
+</ul></li>
+</ul></li>
+<li>The QR Payment Service Interface is now built against v3.23.0 of the base API. This includes the following changes:
+
+<ul>
+<li>Added utility methods to JsonUtil class to assist in reading the contents of a file as a string and deserialising JSON objects from files.</li>
+<li>Added new field <code>region</code> to <code>BankAccount</code> model for scenarios where the <code>routingCode</code> is not sufficient to uniquely identify a bank account.</li>
+</ul></li>
+</ul>
+
 <h2 id="v1-1-0">v1.1.0</h2>
 
 <p>Released 18 November 2019</p>
@@ -390,7 +414,7 @@
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2019 Released under the Apache 2.0 license
+				&copy; 2020 Released under the Apache 2.0 license
 				
 			</aside>
 
