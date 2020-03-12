@@ -3,7 +3,7 @@ swagger: "2.0"
 info:
   description: "The Electrum QR Payment Service describes an interface for supporting\
     \ payments via scanning of a QR code transactions."
-  version: "1.3.0"
+  version: "1.4.0"
   title: "QR PaymentService Interface"
   contact:
     name: "Electrum Support"
