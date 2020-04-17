@@ -443,7 +443,7 @@ paths:
       summary: &quot;Confirms completion of tender initiated by a payment request.&quot;
       description: &quot;This operation confirms that a QR payment transaction has completed\
         \ successfully between the consumer and the merchant. Such a transaction may\
-        \ may be settled between the merchant and the Partner that processed the payment.\
+        \ be settled between the merchant and the Partner that processed the payment.\
         \ Such a transaction cannot be reversed.&quot;
       operationId: &quot;confirmPayment&quot;
       consumes:
@@ -489,8 +489,8 @@ paths:
       summary: &quot;Reverses a payment request that failed or timed out&quot;
       description: &quot;This operation indicates that the sale did not complete and the\
         \ payment should be reversed if it took place. Once a payment is reversed\
-        \ it canot be confirmed and need not be settled between the merchant and the\
-        \ QR Partner.&quot;
+        \ it cannot be confirmed and need not be settled between the merchant and\
+        \ the QR Partner.&quot;
       operationId: &quot;reversePayment&quot;
       consumes:
       - &quot;application/json&quot;
@@ -1005,7 +1005,7 @@ definitions:
       tranId:
         type: &quot;string&quot;
         description: &quot;An echo of the value in the original PaymentRequest.&quot;
-    description: &quot;Confirm that a previous {@link PaymentRequest} has completed successfully\
+    description: &quot;Confirm that a previous PaymentRequest has completed successfully\
       \ at the POS. Where possible all optional fields should be supplied to ensure\
       \ smooth processing. If optional fields are not present then processing may\
       \ require retrieval of the original transaction leading to unnecessary processing\
