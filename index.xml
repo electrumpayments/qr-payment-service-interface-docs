@@ -101,7 +101,7 @@ Upstream And Downstream Entities Upstream and downstream impart a convention for
       
       <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/</guid>
       <description>Electrum Payments connects businesses together to transact with each other easily and robustly.
-This Electrum QR Payment Service Interface documents the messaging interface used by Electrum to connect retailers and merchants together for performing QR code based payments.
+This Electrum QR Payment Service Interface documents the messaging interface used by Electrum to connect retailers and partners together for performing QR code based payments.
 The lifecycle of a QR code based payment can be encapsulated into four major phases - namely:
  A request from the retailer for a QR code to be scanned by a customer.</description>
     </item>
