@@ -378,7 +378,7 @@ swagger: &quot;2.0&quot;
 info:
   description: &quot;The Electrum QR Payment Service describes an interface for supporting\
     \ payments via scanning of a QR code transactions.&quot;
-  version: &quot;1.4.0&quot;
+  version: &quot;1.5.0&quot;
   title: &quot;QR PaymentService Interface&quot;
   contact:
     name: &quot;Electrum Support&quot;
@@ -999,6 +999,15 @@ definitions:
       rrn:
         type: &quot;string&quot;
         description: &quot;This is a reference set by the original source of the transaction.&quot;
+      amounts:
+        description: &quot;Communicates the final amount for a transaction in the approvedAmount\
+          \ field. If absent from a reversal then a full reversal is implied (i.e.\
+          \ a final amount of zero). If absent from a confirmation then a full confirmation\
+          \ is implied (i.e. the final amount is the same as the approvedAmount of\
+          \ the  authorisation response). The approvedAmount in an advice message\
+          \ should be less than or equal to the approvedAmount of the authorisation\
+          \ response as stand-in transactions are not currently supported.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
       partner:
         description: &quot;An echo of the value in the original PaymentRequest.&quot;
         $ref: &quot;#/definitions/Institution&quot;
@@ -1325,6 +1334,15 @@ definitions:
       rrn:
         type: &quot;string&quot;
         description: &quot;This is a reference set by the original source of the transaction.&quot;
+      amounts:
+        description: &quot;Communicates the final amount for a transaction in the approvedAmount\
+          \ field. If absent from a reversal then a full reversal is implied (i.e.\
+          \ a final amount of zero). If absent from a confirmation then a full confirmation\
+          \ is implied (i.e. the final amount is the same as the approvedAmount of\
+          \ the  authorisation response). The approvedAmount in an advice message\
+          \ should be less than or equal to the approvedAmount of the authorisation\
+          \ response as stand-in transactions are not currently supported.&quot;
+        $ref: &quot;#/definitions/Amounts&quot;
       reversalReason:
         type: &quot;string&quot;
         description: &quot;The reason for the reversal&quot;
@@ -1520,7 +1538,7 @@ definitions:
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2020 Released under the Apache 2.0 license
+				&copy; 2021 Released under the Apache 2.0 license
 				
 			</aside>
 

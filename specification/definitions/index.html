@@ -970,6 +970,14 @@
     <td>This is a reference set by the original source of the transaction.</td>
 </tr>
 <tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Communicates the final amount for a transaction in the approvedAmount field. If absent from a reversal then a full reversal is implied (i.e. a final amount of zero). If absent from a confirmation then a full confirmation is implied (i.e. the final amount is the same as the approvedAmount of the  authorisation response). The approvedAmount in an advice message should be less than or equal to the approvedAmount of the authorisation response as stand-in transactions are not currently supported.</td>
+</tr>
+<tr>
     <td>partner</td>
     <td><a href="#institution">Institution</a></td>
     <td>optional</td>
@@ -1375,6 +1383,14 @@
     <td>This is a reference set by the original source of the transaction.</td>
 </tr>
 <tr>
+    <td>amounts</td>
+    <td><a href="#amounts">Amounts</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Communicates the final amount for a transaction in the approvedAmount field. If absent from a reversal then a full reversal is implied (i.e. a final amount of zero). If absent from a confirmation then a full confirmation is implied (i.e. the final amount is the same as the approvedAmount of the  authorisation response). The approvedAmount in an advice message should be less than or equal to the approvedAmount of the authorisation response as stand-in transactions are not currently supported.</td>
+</tr>
+<tr>
     <td>reversalReason</td>
     <td>string</td>
     <td>required</td>
@@ -1679,7 +1695,7 @@
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2020 Released under the Apache 2.0 license
+				&copy; 2021 Released under the Apache 2.0 license
 				
 			</aside>
 
