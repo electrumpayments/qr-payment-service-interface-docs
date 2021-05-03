@@ -378,7 +378,7 @@ swagger: &quot;2.0&quot;
 info:
   description: &quot;The Electrum QR Payment Service describes an interface for supporting\
     \ payments via scanning of a QR code transactions.&quot;
-  version: &quot;1.6.0&quot;
+  version: &quot;1.7.0&quot;
   title: &quot;QR PaymentService Interface&quot;
   contact:
     name: &quot;Electrum Support&quot;
@@ -622,6 +622,37 @@ securityDefinitions:
       \ equals the value used in Client.id and password has been agreed with Electrum.&quot;
     type: &quot;basic&quot;
 definitions:
+  Address:
+    type: &quot;object&quot;
+    properties:
+      addressLine1:
+        type: &quot;string&quot;
+        description: &quot;First line of street address.&quot;
+        pattern: &quot;^.{1,100}&quot;
+      addressLine2:
+        type: &quot;string&quot;
+        description: &quot;Second line of street address (if required).&quot;
+        pattern: &quot;^.{1,100}&quot;
+      city:
+        type: &quot;string&quot;
+        description: &quot;The city where the owner is located. Note: if this field ever\
+          \ needs to be translated to another API with shorter fields, the field will\
+          \ be truncated from the right.&quot;
+        pattern: &quot;^.{1,30}&quot;
+      region:
+        type: &quot;string&quot;
+        description: &quot;The state or region where the owner is located.&quot;
+        pattern: &quot;[A-Z]{2}&quot;
+      country:
+        type: &quot;string&quot;
+        description: &quot;The owner's resident country expressed as an ISO 3166-1 Alpha-2\
+          \ code.&quot;
+        pattern: &quot;[A-Z]{2}&quot;
+      postalCode:
+        type: &quot;string&quot;
+        description: &quot;The owner's postal code.&quot;
+        pattern: &quot;[A-Za-z0-9 -]{1,20}&quot;
+    description: &quot;Details of a customer's address&quot;
   Amounts:
     type: &quot;object&quot;
     properties:
@@ -666,6 +697,7 @@ definitions:
     - &quot;client&quot;
     - &quot;id&quot;
     - &quot;originator&quot;
+    - &quot;qrProperties&quot;
     - &quot;time&quot;
     properties:
       id:
@@ -701,6 +733,13 @@ definitions:
       amounts:
         description: &quot;The amounts pertaining to the QR code to be created.&quot;
         $ref: &quot;#/definitions/Amounts&quot;
+      customer:
+        description: &quot;Information detail pertaining to the customer.&quot;
+        $ref: &quot;#/definitions/Customer&quot;
+      qrProperties:
+        description: &quot;A collection of attributes that describe how a QR code is intended\
+          \ to be used for transacting.&quot;
+        $ref: &quot;#/definitions/QrProperties&quot;
     description: &quot;A request from the merchant for a QR code to be generated. The QR\
       \ code returned should be suitable to be displayed to a consumer to be scanned.&quot;
   CreateQrCodeResponse:
@@ -710,6 +749,7 @@ definitions:
     - &quot;id&quot;
     - &quot;originator&quot;
     - &quot;qrCode&quot;
+    - &quot;qrProperties&quot;
     - &quot;time&quot;
     - &quot;tranId&quot;
     properties:
@@ -746,6 +786,13 @@ definitions:
       amounts:
         description: &quot;The amounts pertaining to the QR code to be created.&quot;
         $ref: &quot;#/definitions/Amounts&quot;
+      customer:
+        description: &quot;Information detail pertaining to the customer.&quot;
+        $ref: &quot;#/definitions/Customer&quot;
+      qrProperties:
+        description: &quot;A collection of attributes that describe how a QR code is intended\
+          \ to be used for transacting.&quot;
+        $ref: &quot;#/definitions/QrProperties&quot;
       tranId:
         type: &quot;string&quot;
         description: &quot;The unique transaction identifier assigned by the QR code provider\
@@ -773,6 +820,68 @@ definitions:
     description: &quot;The response to a CreateQrCodeRequest which contains the specific\
       \ code assigned by the QR code provider as well as the full QR code in EMVCo\
       \ format.&quot;
+  Customer:
+    type: &quot;object&quot;
+    properties:
+      firstName:
+        type: &quot;string&quot;
+        description: &quot;The customer's first name(s)&quot;
+        minLength: 0
+        maxLength: 40
+      lastName:
+        type: &quot;string&quot;
+        description: &quot;The customer's last name&quot;
+        minLength: 0
+        maxLength: 40
+      address:
+        type: &quot;string&quot;
+        description: &quot;The customer's address&quot;
+        minLength: 0
+        maxLength: 80
+      dateOfBirth:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+        description: &quot;The customer's date of birth&quot;
+      status:
+        type: &quot;string&quot;
+        description: &quot;The status of this customer on the Giftcard system. For example:\
+          \ active, inactive&quot;
+      msisdn:
+        type: &quot;string&quot;
+        description: &quot;This must conform to the ITU E.164 numbering plan (https://www.itu.int/rec/T-REC-E.164/en)\
+          \ e.g. 27821234567 for a South African number.&quot;
+        pattern: &quot;^\+?[1-9]\d{0,14}&quot;
+      emailAddress:
+        type: &quot;string&quot;
+        format: &quot;email&quot;
+        description: &quot;The customer's email address. This address must conform to RFC\
+          \ 5322 3.4.1 addr-spec (https://tools.ietf.org/html/rfc5322#section-3.4.1).&quot;
+      addressDetails:
+        description: &quot;The customer's address details.&quot;
+        $ref: &quot;#/definitions/Address&quot;
+      profileId:
+        type: &quot;string&quot;
+        description: &quot;The customer's profile ID. Used to uniquely identify a customer.&quot;
+    description: &quot;A customer who ultimately requests a transaction be performed.&quot;
+  Duration:
+    type: &quot;object&quot;
+    properties:
+      seconds:
+        type: &quot;integer&quot;
+        format: &quot;int64&quot;
+      negative:
+        type: &quot;boolean&quot;
+        default: false
+      zero:
+        type: &quot;boolean&quot;
+        default: false
+      nano:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      units:
+        type: &quot;array&quot;
+        items:
+          $ref: &quot;#/definitions/TemporalUnit&quot;
   ErrorDetail:
     type: &quot;object&quot;
     required:
@@ -849,6 +958,15 @@ definitions:
           \ if available. This is the value returned in the tranId field of the CreateQrCodeResponse\
           \ or the ScanNotification.&quot;
     description: &quot;Describes a failed outcome of an operation.&quot;
+  Instant:
+    type: &quot;object&quot;
+    properties:
+      nano:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      epochSecond:
+        type: &quot;integer&quot;
+        format: &quot;int64&quot;
   Institution:
     type: &quot;object&quot;
     required:
@@ -889,6 +1007,21 @@ definitions:
         - &quot;CREDIT&quot;
     description: &quot;An amount object only containing value and currency, and optionally\
       \ an indicator of DEBIT/CREDIT&quot;
+  LocalTime:
+    type: &quot;object&quot;
+    properties:
+      hour:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      minute:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      second:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      nano:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
   Merchant:
     type: &quot;object&quot;
     required:
@@ -939,6 +1072,60 @@ definitions:
         minLength: 0
         maxLength: 2
     description: &quot;A container object representing the Merchant Name and Location&quot;
+  OffsetDateTime:
+    type: &quot;object&quot;
+    properties:
+      offset:
+        $ref: &quot;#/definitions/ZoneOffset&quot;
+      nano:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      year:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      monthValue:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      dayOfMonth:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      hour:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      minute:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      second:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      month:
+        type: &quot;string&quot;
+        enum:
+        - &quot;JANUARY&quot;
+        - &quot;FEBRUARY&quot;
+        - &quot;MARCH&quot;
+        - &quot;APRIL&quot;
+        - &quot;MAY&quot;
+        - &quot;JUNE&quot;
+        - &quot;JULY&quot;
+        - &quot;AUGUST&quot;
+        - &quot;SEPTEMBER&quot;
+        - &quot;OCTOBER&quot;
+        - &quot;NOVEMBER&quot;
+        - &quot;DECEMBER&quot;
+      dayOfWeek:
+        type: &quot;string&quot;
+        enum:
+        - &quot;MONDAY&quot;
+        - &quot;TUESDAY&quot;
+        - &quot;WEDNESDAY&quot;
+        - &quot;THURSDAY&quot;
+        - &quot;FRIDAY&quot;
+        - &quot;SATURDAY&quot;
+        - &quot;SUNDAY&quot;
+      dayOfYear:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
   Originator:
     type: &quot;object&quot;
     required:
@@ -959,6 +1146,12 @@ definitions:
       merchant:
         description: &quot;Merchant data. Required if available&quot;
         $ref: &quot;#/definitions/Merchant&quot;
+      operatorId:
+        type: &quot;string&quot;
+        description: &quot;The ID that uniquely identifies the person operating the terminal\
+          \ specified by the terminalId field.&quot;
+        minLength: 0
+        maxLength: 30
     description: &quot;The Originator object encapsulates data relating to the originator\
       \ of the transaction&quot;
   PaymentConfirmation:
@@ -1361,6 +1554,55 @@ definitions:
       \ state. Where possible all optional fields should be supplied to ensure smooth\
       \ processing. If optional fields are not present then processing may require\
       \ retrieval of the original transaction leading to unnecessary processing overheads.&quot;
+  QrProperties:
+    type: &quot;object&quot;
+    properties:
+      uuid:
+        type: &quot;string&quot;
+        description: &quot;The value which, when embedded in an EMVCo QR code, identifies\
+          \ that Capitec is the provider of the QR code.&quot;
+      value:
+        $ref: &quot;#/definitions/LedgerAmount&quot;
+      overPaymentAllowed:
+        type: &quot;boolean&quot;
+        description: &quot;Indicates whether or not the transaction against the QR may\
+          \ use an amount greater than the value in the `amount` field.&quot;
+        default: false
+      partPaymentAllowed:
+        type: &quot;boolean&quot;
+        description: &quot;Indicates whether or not the transaction against the QR may\
+          \ use an amount less than the value in the `amount` field.&quot;
+        default: false
+      expiryDate:
+        description: &quot;The date and time at which the QR code expires at which point\
+          \ it may no longer be used to facilitate transactions. The format shall\
+          \ be as defined for date-time in [RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).\
+          \ It is recommended that the optional time-secfrac be included up to millisecond\
+          \ precision&quot;
+        $ref: &quot;#/definitions/OffsetDateTime&quot;
+      singleUse:
+        type: &quot;boolean&quot;
+        description: &quot;If set to `true`, the QR code is intended to be used for a single\
+          \ transaction only. *Note*: This is not a strictly enforced rule but is\
+          \ rather intended as a guide as to the intended use of the QR code.&quot;
+        default: false
+      scheme:
+        type: &quot;string&quot;
+        description: &quot;The scheme which defines the format of the contents of the `qrData`\
+          \ field of a `qrCode` object. Allowed values are described below with a\
+          \ brief description. Please consult Electrum for further detail.:   * EMVCO_MERCHANT\
+          \ - The EMVCo merchant-presented QR code format.   * PSEUDO_EMVCO_MERCHANT\
+          \ - A format based on the EMVCo merchant-presented QR code format however\
+          \ fields which are manadatory in the EMVCo specification may be absent in\
+          \ this scheme.   * ELECTRUM_MERCHANT_MINIMAL - A format which is based on\
+          \ the EMVCo merchant-presented QR code specification however it comprises\
+          \ the minimal set of fields to faciliate transactions. &quot;
+        enum:
+        - &quot;EMVCO_MERCHANT&quot;
+        - &quot;PSEUDO_EMVCO_MERCHANT&quot;
+        - &quot;ELECTRUM_MERCHANT_MINIMAL&quot;
+    description: &quot;A collection of attributes that describe how a QR code is intended\
+      \ to be used for transacting.&quot;
   ScanNotification:
     type: &quot;object&quot;
     required:
@@ -1469,6 +1711,20 @@ definitions:
           \ if not present.&quot;
         default: false
     description: &quot;A line of text to be printed on the till slip&quot;
+  TemporalUnit:
+    type: &quot;object&quot;
+    properties:
+      duration:
+        $ref: &quot;#/definitions/Duration&quot;
+      durationEstimated:
+        type: &quot;boolean&quot;
+        default: false
+      dateBased:
+        type: &quot;boolean&quot;
+        default: false
+      timeBased:
+        type: &quot;boolean&quot;
+        default: false
   Tender:
     type: &quot;object&quot;
     required:
@@ -1533,6 +1789,101 @@ definitions:
       \ must not alter the identifier set by another entity. Once an identifier has\
       \ been set by an entity, all other entity's must send that identifier in subsequent\
       \ messages.&quot;
+  ZoneOffset:
+    type: &quot;object&quot;
+    properties:
+      totalSeconds:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      rules:
+        $ref: &quot;#/definitions/ZoneRules&quot;
+      id:
+        type: &quot;string&quot;
+  ZoneOffsetTransition:
+    type: &quot;object&quot;
+    properties:
+      offsetBefore:
+        $ref: &quot;#/definitions/ZoneOffset&quot;
+      offsetAfter:
+        $ref: &quot;#/definitions/ZoneOffset&quot;
+      duration:
+        $ref: &quot;#/definitions/Duration&quot;
+      dateTimeBefore:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+      instant:
+        $ref: &quot;#/definitions/Instant&quot;
+      overlap:
+        type: &quot;boolean&quot;
+        default: false
+      gap:
+        type: &quot;boolean&quot;
+        default: false
+      dateTimeAfter:
+        type: &quot;string&quot;
+        format: &quot;date-time&quot;
+  ZoneOffsetTransitionRule:
+    type: &quot;object&quot;
+    properties:
+      month:
+        type: &quot;string&quot;
+        enum:
+        - &quot;JANUARY&quot;
+        - &quot;FEBRUARY&quot;
+        - &quot;MARCH&quot;
+        - &quot;APRIL&quot;
+        - &quot;MAY&quot;
+        - &quot;JUNE&quot;
+        - &quot;JULY&quot;
+        - &quot;AUGUST&quot;
+        - &quot;SEPTEMBER&quot;
+        - &quot;OCTOBER&quot;
+        - &quot;NOVEMBER&quot;
+        - &quot;DECEMBER&quot;
+      timeDefinition:
+        type: &quot;string&quot;
+        enum:
+        - &quot;UTC&quot;
+        - &quot;WALL&quot;
+        - &quot;STANDARD&quot;
+      standardOffset:
+        $ref: &quot;#/definitions/ZoneOffset&quot;
+      offsetBefore:
+        $ref: &quot;#/definitions/ZoneOffset&quot;
+      offsetAfter:
+        $ref: &quot;#/definitions/ZoneOffset&quot;
+      dayOfMonthIndicator:
+        type: &quot;integer&quot;
+        format: &quot;int32&quot;
+      localTime:
+        $ref: &quot;#/definitions/LocalTime&quot;
+      midnightEndOfDay:
+        type: &quot;boolean&quot;
+        default: false
+      dayOfWeek:
+        type: &quot;string&quot;
+        enum:
+        - &quot;MONDAY&quot;
+        - &quot;TUESDAY&quot;
+        - &quot;WEDNESDAY&quot;
+        - &quot;THURSDAY&quot;
+        - &quot;FRIDAY&quot;
+        - &quot;SATURDAY&quot;
+        - &quot;SUNDAY&quot;
+  ZoneRules:
+    type: &quot;object&quot;
+    properties:
+      fixedOffset:
+        type: &quot;boolean&quot;
+        default: false
+      transitions:
+        type: &quot;array&quot;
+        items:
+          $ref: &quot;#/definitions/ZoneOffsetTransition&quot;
+      transitionRules:
+        type: &quot;array&quot;
+        items:
+          $ref: &quot;#/definitions/ZoneOffsetTransitionRule&quot;
 </code></pre>
 
 

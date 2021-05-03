@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/definitions/</guid>
-      <description>Amounts Amounts which make up the transaction. Absent amounts have zero value.  Name Type Required Default Restrictions Description   requestAmount LedgerAmount optional   The transaction amount requested by the customer to be authorised or approved. This is the total amount the customer wishes to pay for a service or virtual product.   approvedAmount LedgerAmount optional   The transaction amount which was approved by the upstream entity.</description>
+      <description>Address Details of a customer&amp;#x27;s address  Name Type Required Default Restrictions Description   addressLine1 string optional  pattern:^.{1,100} First line of street address.   addressLine2 string optional  pattern:^.{1,100} Second line of street address (if required).   city string optional  pattern:^.{1,30} The city where the owner is located. Note: if this field ever needs to be translated to another API with shorter fields, the field will be truncated from the right.</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ Language Support Java The Electrum implementation of the Electrum QR Payment Ser
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://electrumpayments.github.io/qr-payment-service-interface-docs/specification/introduction/</guid>
-      <description> Version 1.6.0
+      <description> Version 1.7.0
 The Electrum QR Payment Service describes an interface for supporting payments via scanning of a QR code transactions.
 Email Electrum Support
 Licensed under Apache 2.0

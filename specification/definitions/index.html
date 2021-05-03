@@ -367,6 +367,69 @@
 
 			
 
+<h2 id="address">Address</h2>
+
+<p>Details of a customer&#x27;s address
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>addressLine1</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>^.{1,100}</i><br/></td>
+    <td>First line of street address.</td>
+</tr>
+<tr>
+    <td>addressLine2</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>^.{1,100}</i><br/></td>
+    <td>Second line of street address (if required).</td>
+</tr>
+<tr>
+    <td>city</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>^.{1,30}</i><br/></td>
+    <td>The city where the owner is located. Note: if this field ever needs to be translated to another API with shorter fields, the field will be truncated from the right.</td>
+</tr>
+<tr>
+    <td>region</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>[A-Z]{2}</i><br/></td>
+    <td>The state or region where the owner is located.</td>
+</tr>
+<tr>
+    <td>country</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>[A-Z]{2}</i><br/></td>
+    <td>The owner&rsquo;s resident country expressed as an ISO 3166-1 Alpha-2 code.</td>
+</tr>
+<tr>
+    <td>postalCode</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>[A-Za-z0-9 -]{1,20}</i><br/></td>
+    <td>The owner&rsquo;s postal code.</td>
+</tr></p>
+
+<p></table></p>
+
 <h2 id="amounts">Amounts</h2>
 
 <p>Amounts which make up the transaction. Absent amounts have zero value.
@@ -528,6 +591,22 @@
     <td></td>
     <td></td>
     <td>The amounts pertaining to the QR code to be created.</td>
+</tr>
+<tr>
+    <td>customer</td>
+    <td><a href="#customer">Customer</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Information detail pertaining to the customer.</td>
+</tr>
+<tr>
+    <td>qrProperties</td>
+    <td><a href="#qrproperties">QrProperties</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>A collection of attributes that describe how a QR code is intended to be used for transacting.</td>
 </tr></p>
 
 <p></table></p>
@@ -609,6 +688,22 @@
     <td>The amounts pertaining to the QR code to be created.</td>
 </tr>
 <tr>
+    <td>customer</td>
+    <td><a href="#customer">Customer</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Information detail pertaining to the customer.</td>
+</tr>
+<tr>
+    <td>qrProperties</td>
+    <td><a href="#qrproperties">QrProperties</a></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>A collection of attributes that describe how a QR code is intended to be used for transacting.</td>
+</tr>
+<tr>
     <td>tranId</td>
     <td>string</td>
     <td>required</td>
@@ -626,6 +721,147 @@
 </tr></p>
 
 <p></table></p>
+
+<h2 id="customer">Customer</h2>
+
+<p>A customer who ultimately requests a transaction be performed.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>firstName</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>maxLength:<i>40</i><br/></td>
+    <td>The customer&rsquo;s first name(s)</td>
+</tr>
+<tr>
+    <td>lastName</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>maxLength:<i>40</i><br/></td>
+    <td>The customer&rsquo;s last name</td>
+</tr>
+<tr>
+    <td>address</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>maxLength:<i>80</i><br/></td>
+    <td>The customer&rsquo;s address</td>
+</tr>
+<tr>
+    <td>dateOfBirth</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td>The customer&rsquo;s date of birth</td>
+</tr>
+<tr>
+    <td>status</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The status of this customer on the Giftcard system. For example: active, inactive</td>
+</tr>
+<tr>
+    <td>msisdn</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>pattern:<i>^+?[1-9]\d{0,14}</i><br/></td>
+    <td>This must conform to the ITU E.164 numbering plan (<a href="https://www.itu.int/rec/T-REC-E.164/en">https://www.itu.int/rec/T-REC-E.164/en</a>) e.g. 27821234567 for a South African number.</td>
+</tr>
+<tr>
+    <td>emailAddress</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>email</i><br/></td>
+    <td>The customer&rsquo;s email address. This address must conform to RFC 5322 3.4.1 addr-spec (<a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">https://tools.ietf.org/html/rfc5322#section-3.4.1</a>).</td>
+</tr>
+<tr>
+    <td>addressDetails</td>
+    <td><a href="#address">Address</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The customer&rsquo;s address details.</td>
+</tr>
+<tr>
+    <td>profileId</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The customer&rsquo;s profile ID. Used to uniquely identify a customer.</td>
+</tr></p>
+
+<p></table></p>
+
+<h2 id="duration">Duration</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>seconds</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int64</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>negative</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>zero</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>nano</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>units</td>
+    <td>array[[TemporalUnit](#temporalunit)]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</table>
 
 <h2 id="errordetail">ErrorDetail</h2>
 
@@ -714,6 +950,36 @@
 
 <p></table></p>
 
+<h2 id="instant">Instant</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>nano</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>epochSecond</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int64</i><br/></td>
+    <td></td>
+</tr>
+
+</table>
+
 <h2 id="institution">Institution</h2>
 
 <p>Originating, acquiring, processing, or receiving institution details
@@ -783,6 +1049,52 @@
 </tr></p>
 
 <p></table></p>
+
+<h2 id="localtime">LocalTime</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>hour</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>minute</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>second</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>nano</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+
+</table>
 
 <h2 id="merchant">Merchant</h2>
 
@@ -870,6 +1182,108 @@
 
 <p></table></p>
 
+<h2 id="offsetdatetime">OffsetDateTime</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>offset</td>
+    <td>[ZoneOffset](#zoneoffset)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>nano</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>year</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>monthValue</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dayOfMonth</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>hour</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>minute</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>second</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>month</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]</i></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dayOfWeek</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]</i></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dayOfYear</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+
+</table>
+
 <h2 id="originator">Originator</h2>
 
 <p>The Originator object encapsulates data relating to the originator of the transaction
@@ -905,6 +1319,14 @@
     <td></td>
     <td></td>
     <td>Merchant data. Required if available</td>
+</tr>
+<tr>
+    <td>operatorId</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>maxLength:<i>30</i><br/></td>
+    <td>The ID that uniquely identifies the person operating the terminal specified by the terminalId field.</td>
 </tr></p>
 
 <p></table></p>
@@ -1417,6 +1839,77 @@
 
 <p></table></p>
 
+<h2 id="qrproperties">QrProperties</h2>
+
+<p>A collection of attributes that describe how a QR code is intended to be used for transacting.
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>uuid</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The value which, when embedded in an EMVCo QR code, identifies that Capitec is the provider of the QR code.</td>
+</tr>
+<tr>
+    <td>value</td>
+    <td><a href="#ledgeramount">LedgerAmount</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>overPaymentAllowed</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Indicates whether or not the transaction against the QR may use an amount greater than the value in the <code>amount</code> field.</td>
+</tr>
+<tr>
+    <td>partPaymentAllowed</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>Indicates whether or not the transaction against the QR may use an amount less than the value in the <code>amount</code> field.</td>
+</tr>
+<tr>
+    <td>expiryDate</td>
+    <td><a href="#offsetdatetime">OffsetDateTime</a></td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>The date and time at which the QR code expires at which point it may no longer be used to facilitate transactions. The format shall be as defined for date-time in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6</a>. It is recommended that the optional time-secfrac be included up to millisecond precision</td>
+</tr>
+<tr>
+    <td>singleUse</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td>If set to <code>true</code>, the QR code is intended to be used for a single transaction only. <em>Note</em>: This is not a strictly enforced rule but is rather intended as a guide as to the intended use of the QR code.</td>
+</tr>
+<tr>
+    <td>scheme</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[EMVCO_MERCHANT, PSEUDO_EMVCO_MERCHANT, ELECTRUM_MERCHANT_MINIMAL]</i></td>
+    <td>The scheme which defines the format of the contents of the <code>qrData</code> field of a <code>qrCode</code> object. Allowed values are described below with a brief description. Please consult Electrum for further detail.:   * EMVCO_MERCHANT - The EMVCo merchant-presented QR code format.   * PSEUDO_EMVCO_MERCHANT - A format based on the EMVCo merchant-presented QR code format however fields which are manadatory in the EMVCo specification may be absent in this scheme.   * ELECTRUM_MERCHANT_MINIMAL - A format which is based on the EMVCo merchant-presented QR code specification however it comprises the minimal set of fields to faciliate transactions. </td>
+</tr></p>
+
+<p></table></p>
+
 <h2 id="scannotification">ScanNotification</h2>
 
 <p>A notification sent by the Partner indicating that the Partner received a scan of the QR code linked to the transaction ID. Any PaymentRequest with a matching tranId value should be forwarded to the Partner for processing.
@@ -1606,6 +2099,52 @@
 
 <p></table></p>
 
+<h2 id="temporalunit">TemporalUnit</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>duration</td>
+    <td>[Duration](#duration)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>durationEstimated</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dateBased</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>timeBased</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</table>
+
 <h2 id="tender">Tender</h2>
 
 <p>Details of the Tender used by a customer towards a payment
@@ -1691,6 +2230,246 @@
 </tr></p>
 
 <p></table></p>
+
+<h2 id="zoneoffset">ZoneOffset</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>totalSeconds</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>rules</td>
+    <td>[ZoneRules](#zonerules)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</table>
+
+<h2 id="zoneoffsettransition">ZoneOffsetTransition</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>offsetBefore</td>
+    <td>[ZoneOffset](#zoneoffset)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>offsetAfter</td>
+    <td>[ZoneOffset](#zoneoffset)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>duration</td>
+    <td>[Duration](#duration)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dateTimeBefore</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>instant</td>
+    <td>[Instant](#instant)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>overlap</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>gap</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dateTimeAfter</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>date-time</i><br/></td>
+    <td></td>
+</tr>
+
+</table>
+
+<h2 id="zoneoffsettransitionrule">ZoneOffsetTransitionRule</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>month</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]</i></td>
+    <td></td>
+</tr>
+<tr>
+    <td>timeDefinition</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[UTC, WALL, STANDARD]</i></td>
+    <td></td>
+</tr>
+<tr>
+    <td>standardOffset</td>
+    <td>[ZoneOffset](#zoneoffset)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>offsetBefore</td>
+    <td>[ZoneOffset](#zoneoffset)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>offsetAfter</td>
+    <td>[ZoneOffset](#zoneoffset)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dayOfMonthIndicator</td>
+    <td>integer</td>
+    <td>optional</td>
+    <td></td>
+    <td>format:<i>int32</i><br/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>localTime</td>
+    <td>[LocalTime](#localtime)</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>midnightEndOfDay</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>dayOfWeek</td>
+    <td>string</td>
+    <td>optional</td>
+    <td></td>
+    <td><i>[MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]</i></td>
+    <td></td>
+</tr>
+
+</table>
+
+<h2 id="zonerules">ZoneRules</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Restrictions</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>fixedOffset</td>
+    <td>boolean</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>transitions</td>
+    <td>array[[ZoneOffsetTransition](#zoneoffsettransition)]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>transitionRules</td>
+    <td>array[[ZoneOffsetTransitionRule](#zoneoffsettransitionrule)]</td>
+    <td>optional</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</table>
 
 
 			<aside class="copyright" role="note">
